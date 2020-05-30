@@ -16,11 +16,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    ant.cpp \
+    egg.cpp \
+    larva.cpp \
     main.cpp \
-    mouse.cpp
+    mouse.cpp \
+    movingant.cpp \
+    queen.cpp \
+    staticant.cpp \
+    warrior.cpp \
+    worker.cpp
 
 HEADERS += \
-    mouse.h
+    ant.h \
+    egg.h \
+    larva.h \
+    mouse.h \
+    movingant.h \
+    queen.h \
+    staticant.h \
+    warrior.h \
+    worker.h
 
 FORMS +=
 
