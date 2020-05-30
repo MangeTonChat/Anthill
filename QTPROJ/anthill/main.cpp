@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 //! [4]
     QGraphicsView view(&scene);
     view.setRenderHint(QPainter::Antialiasing);
-    view.setBackgroundBrush(QPixmap(":/images/cheese.jpg"));
+    view.setBackgroundBrush(QPixmap(":/images/dirt.png"));
 //! [4] //! [5]
     view.setCacheMode(QGraphicsView::CacheBackground);
     view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
