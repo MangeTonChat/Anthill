@@ -1,21 +1,23 @@
-#ifndef ANT_H
-#define ANT_H
+#ifndef ANTHILL_H
+#define ANTHILL_H
 //#include <QGraphicsItem>
 
 
-class Ant//: public QGraphicsItem
+class Anthill
 {
 public:
-    Ant();
-    ~Ant();
-    void Die();
+    Anthill();
+    ~Anthill();
     /*QRectF boundingRect() const override;
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     void advance(int phase) override;*/
 protected:
-    int HealthPoints;
-    bool isAQueen;
+    int IdAnthill;
+    int InitialAntNumber;
+    int AntNumber;
+    int MaxAntNumber;
+    int InitialAntNumber;
 };
 
-#endif // ANT_H
+#endif // ANTHILL_H

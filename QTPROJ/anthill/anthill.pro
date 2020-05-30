@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     ant.cpp \
+    anthill.cpp \
     egg.cpp \
     larva.cpp \
     main.cpp \
     mouse.cpp \
     movingant.cpp \
+    pheromone.cpp \
     queen.cpp \
     staticant.cpp \
     warrior.cpp \
@@ -29,10 +31,12 @@ SOURCES += \
 
 HEADERS += \
     ant.h \
+    anthill.h \
     egg.h \
     larva.h \
     mouse.h \
     movingant.h \
+    pheromone.h \
     queen.h \
     staticant.h \
     warrior.h \

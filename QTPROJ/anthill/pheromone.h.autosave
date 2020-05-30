@@ -1,21 +1,22 @@
-#ifndef ANT_H
-#define ANT_H
-//#include <QGraphicsItem>
+#ifndef PHEROMONE_H
+#define PHEROMONE_H
 
 
-class Ant//: public QGraphicsItem
+class Pheromone
 {
 public:
-    Ant();
-    ~Ant();
+    Pheromone();
+    ~Pheromone();
+    void Reset();
     void Die();
+protected:
+    int ConsumptionPerRound;
+    int Durability;
+    int IdAnthill;
     /*QRectF boundingRect() const override;
     QPainterPath shape() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     void advance(int phase) override;*/
-protected:
-    int HealthPoints;
-    bool isAQueen;
 };
 
-#endif // ANT_H
+#endif // PHEROMONE_H
