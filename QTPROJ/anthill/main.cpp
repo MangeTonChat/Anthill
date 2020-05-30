@@ -3,7 +3,7 @@
 
 #include "mouse.h"
 
-static constexpr int MouseCount = 19;
+static constexpr int MouseCount = 5;
 
 //! [0]
 int main(int argc, char **argv)

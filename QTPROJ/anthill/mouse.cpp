@@ -30,9 +30,12 @@ Mouse::Mouse() : color(QRandomGenerator::global()->bounded(256),
 //! [1]
 QRectF Mouse::boundingRect() const
 {
-    qreal adjust = 0.5;
+    /*qreal adjust = 0.5;
     return QRectF(-18 - adjust, -22 - adjust,
-                  36 + adjust, 60 + adjust);
+                  36 + adjust, 60 + adjust);*/
+    qreal adjust = 3.5;
+        return QRectF(-35 - adjust, -55 - adjust,
+                      70 + adjust, 110 + adjust);
 }
 //! [1]
 
@@ -40,7 +43,7 @@ QRectF Mouse::boundingRect() const
 QPainterPath Mouse::shape() const
 {
     QPainterPath path;
-    path.addRect(-10, -20, 20, 40);
+    path.addRect(-35, -55, 70, 100);
     return path;
 }
 //! [2]
@@ -48,7 +51,66 @@ QPainterPath Mouse::shape() const
 //! [3]
 void Mouse::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
-    // Body
+    // Pates arrière droite
+    QPainterPath pathAD(QPointF(-5, 13));
+    pathAD.cubicTo(-5, 13, -30, 25, -35, +55);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathAD);
+
+    // Pates arrière gauche
+    QPainterPath pathAG(QPointF(5, 13));
+    pathAG.cubicTo(5, 13, 30, 25, 35, 55);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathAG);
+
+    // Pates mid droite
+    QPainterPath pathMD(QPointF(-8, 5));
+    pathMD.cubicTo(-8, 5, -20, 2, -35, -10);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathMD);
+
+    // Pates mid gauche
+    QPainterPath pathMG(QPointF(8, 5));
+    pathMG.cubicTo(8, 5, 20, 2, 35, -10);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathMG);
+
+    // Pates avant droite
+    QPainterPath pathAvD(QPointF(-8, -10));
+    pathAvD.cubicTo(-8, -10, -20, -7, -35, -30);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathAvD);
+
+    // Pates avant gauche
+    QPainterPath pathAvG(QPointF(-8, -10));
+    pathAvG.cubicTo(8, -10, 20, -7, 35, -30);
+    painter->setBrush(Qt::NoBrush);
+    painter->drawPath(pathAvG);
+
+    // Body below
+    painter->setBrush(color);
+    painter->drawEllipse(-15, 15, 30, 40);
+
+    // Body Middle
+    painter->setBrush(color);
+    painter->drawEllipse(-10, -15, 20, 30);
+
+    // Head
+    painter->setBrush(color);
+    painter->drawEllipse(-10, -35, 20, 20);
+
+    // Eyes
+    painter->setBrush(Qt::black);
+    painter->drawEllipse(-9, -38, 8, 8);
+    painter->drawEllipse(1, -38, 8, 8);
+
+
+
+    // Pupils
+    //painter->drawEllipse(QRectF(-5.0 + mouseEyeDirection, 30, 4, 4));
+   // painter->drawEllipse(QRectF(5.0 + mouseEyeDirection, 30, 4, 4));
+
+    /*// Body
     painter->setBrush(color);
     painter->drawEllipse(-10, -20, 20, 40);
 
@@ -76,7 +138,7 @@ void Mouse::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *
     path.cubicTo(5, 27, 5, 32, 0, 30);
     path.cubicTo(-5, 32, -5, 42, 0, 35);
     painter->setBrush(Qt::NoBrush);
-    painter->drawPath(path);
+    painter->drawPath(path);*/
 }
 //! [3]
 
@@ -147,6 +209,7 @@ void Mouse::advance(int step)
 
 //! [11]
     speed += (-50 + QRandomGenerator::global()->bounded(100)) / 100.0;
+    speed = - speed;
 
     qreal dx = ::sin(angle) * 10;
     mouseEyeDirection = (qAbs(dx / 5) < 1) ? 0 : dx / 5;
