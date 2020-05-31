@@ -8,6 +8,7 @@
 
 constexpr qreal Pi = M_PI;
 constexpr qreal TwoPi = 2 * M_PI;
+constexpr qreal ScaleFactor = 0.2;
 
 static qreal normalizeAngle(qreal angle)
 {
@@ -34,8 +35,8 @@ QRectF Mouse::boundingRect() const
     return QRectF(-18 - adjust, -22 - adjust,
                   36 + adjust, 60 + adjust);*/
     qreal adjust = 3.5;
-        return QRectF(-35 - adjust, -55 - adjust,
-                      70 + adjust, 110 + adjust);
+        return QRectF(-35*ScaleFactor - adjust, -55*ScaleFactor - adjust,
+                      70*ScaleFactor + adjust, 110*ScaleFactor + adjust);
 }
 //! [1]
 
@@ -43,7 +44,7 @@ QRectF Mouse::boundingRect() const
 QPainterPath Mouse::shape() const
 {
     QPainterPath path;
-    path.addRect(-35, -55, 70, 100);
+    path.addRect(-35*ScaleFactor, -55*ScaleFactor, 70*ScaleFactor, 100*ScaleFactor);
     return path;
 }
 //! [2]
@@ -52,57 +53,57 @@ QPainterPath Mouse::shape() const
 void Mouse::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
     // Pates arrière droite
-    QPainterPath pathAD(QPointF(-5, 13));
-    pathAD.cubicTo(-5, 13, -30, 25, -35, +55);
+    QPainterPath pathAD(QPointF(-5*ScaleFactor, 13*ScaleFactor));
+    pathAD.cubicTo(-5*ScaleFactor, 13*ScaleFactor, -30*ScaleFactor, 25*ScaleFactor, -35*ScaleFactor, +55*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathAD);
 
     // Pates arrière gauche
-    QPainterPath pathAG(QPointF(5, 13));
-    pathAG.cubicTo(5, 13, 30, 25, 35, 55);
+    QPainterPath pathAG(QPointF(5*ScaleFactor, 13*ScaleFactor));
+    pathAG.cubicTo(5*ScaleFactor, 13*ScaleFactor, 30*ScaleFactor, 25*ScaleFactor, 35*ScaleFactor, 55*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathAG);
 
     // Pates mid droite
-    QPainterPath pathMD(QPointF(-8, 5));
-    pathMD.cubicTo(-8, 5, -20, 2, -35, -10);
+    QPainterPath pathMD(QPointF(-8*ScaleFactor, 5*ScaleFactor));
+    pathMD.cubicTo(-8*ScaleFactor, 5*ScaleFactor, -20*ScaleFactor, 2*ScaleFactor, -35*ScaleFactor, -10*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathMD);
 
     // Pates mid gauche
-    QPainterPath pathMG(QPointF(8, 5));
-    pathMG.cubicTo(8, 5, 20, 2, 35, -10);
+    QPainterPath pathMG(QPointF(8*ScaleFactor, 5*ScaleFactor));
+    pathMG.cubicTo(8*ScaleFactor, 5*ScaleFactor, 20*ScaleFactor, 2*ScaleFactor, 35*ScaleFactor, -10*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathMG);
 
     // Pates avant droite
-    QPainterPath pathAvD(QPointF(-8, -10));
-    pathAvD.cubicTo(-8, -10, -20, -7, -35, -30);
+    QPainterPath pathAvD(QPointF(-8*ScaleFactor, -10*ScaleFactor));
+    pathAvD.cubicTo(-8*ScaleFactor, -10*ScaleFactor, -20*ScaleFactor, -7*ScaleFactor, -35*ScaleFactor, -30*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathAvD);
 
     // Pates avant gauche
-    QPainterPath pathAvG(QPointF(-8, -10));
-    pathAvG.cubicTo(8, -10, 20, -7, 35, -30);
+    QPainterPath pathAvG(QPointF(-8*ScaleFactor, -10*ScaleFactor));
+    pathAvG.cubicTo(8*ScaleFactor, -10*ScaleFactor, 20*ScaleFactor, -7*ScaleFactor, 35*ScaleFactor, -30*ScaleFactor);
     painter->setBrush(Qt::NoBrush);
     painter->drawPath(pathAvG);
 
     // Body below
     painter->setBrush(color);
-    painter->drawEllipse(-15, 15, 30, 40);
+    painter->drawEllipse(-15*ScaleFactor, 15*ScaleFactor, 30*ScaleFactor, 40*ScaleFactor);
 
     // Body Middle
     painter->setBrush(color);
-    painter->drawEllipse(-10, -15, 20, 30);
+    painter->drawEllipse(-10*ScaleFactor, -15*ScaleFactor, 20*ScaleFactor, 30*ScaleFactor);
 
     // Head
     painter->setBrush(color);
-    painter->drawEllipse(-10, -35, 20, 20);
+    painter->drawEllipse(-10*ScaleFactor, -35*ScaleFactor, 20*ScaleFactor, 20*ScaleFactor);
 
     // Eyes
     painter->setBrush(Qt::black);
-    painter->drawEllipse(-9, -38, 8, 8);
-    painter->drawEllipse(1, -38, 8, 8);
+    painter->drawEllipse(-9*ScaleFactor, -38*ScaleFactor, 8*ScaleFactor, 8*ScaleFactor);
+    painter->drawEllipse(1*ScaleFactor, -38*ScaleFactor, 8*ScaleFactor, 8*ScaleFactor);
 
 
 
