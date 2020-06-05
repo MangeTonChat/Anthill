@@ -33,6 +33,7 @@ Warrior::Warrior()
 
 QRectF Warrior::boundingRect() const
 {
+    // TODO : improve
     qreal adjust = 3.5;
         return QRectF(-35*ScaleFactor - adjust, -55*ScaleFactor - adjust,
                       70*ScaleFactor + adjust, 110*ScaleFactor + adjust);

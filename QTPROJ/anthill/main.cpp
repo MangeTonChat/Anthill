@@ -1,7 +1,6 @@
 #include <QtMath>
 #include <QtWidgets>
 
-#include "mouse.h"
 #include "ant.h"
 #include "warrior.h"
 
