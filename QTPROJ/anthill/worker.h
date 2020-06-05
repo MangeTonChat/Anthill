@@ -3,7 +3,7 @@
 #include "movingant.h"
 
 
-class Worker:public MovingAnt
+class Worker//:public MovingAnt
 {
 public:
     Worker();

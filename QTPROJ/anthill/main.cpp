@@ -2,15 +2,14 @@
 #include <QtWidgets>
 
 #include "mouse.h"
+#include "ant.h"
+#include "warrior.h"
 
-static constexpr int MouseCount = 10;
+static constexpr int AntCount = 100;
 
 //! [0]
 int main(int argc, char **argv)
 {
-#ifdef Q_OS_ANDROID
-    QApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
-#endif
     QApplication app(argc, argv);
 //! [0]
 
@@ -22,11 +21,11 @@ int main(int argc, char **argv)
 //! [2]
 
 //! [3]
-    for (int i = 0; i < MouseCount; ++i) {
-        Mouse *mouse = new Mouse;
-        mouse->setPos(::sin((i * 6.28) / MouseCount) * 200,
-                      ::cos((i * 6.28) / MouseCount) * 200);
-        scene.addItem(mouse);
+    for (int i = 0; i < AntCount; ++i) {
+        Ant *ant = new Warrior;
+        ant->setPos(::sin((i * 6.28) / AntCount) * 200,
+                      ::cos((i * 6.28) / AntCount) * 200);
+        scene.addItem(ant);
     }
 //! [3]
 
@@ -39,7 +38,7 @@ int main(int argc, char **argv)
     view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     view.setDragMode(QGraphicsView::ScrollHandDrag);
 //! [5] //! [6]
-    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Colliding Mice"));
+    view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Sweaty Anthill"));
     view.resize(400, 300);
     view.show();
 

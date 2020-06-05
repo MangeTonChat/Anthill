@@ -4,3 +4,8 @@ MovingAnt::MovingAnt()
 {
 
 }
+
+MovingAnt::~MovingAnt()
+{
+
+}

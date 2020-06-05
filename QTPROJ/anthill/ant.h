@@ -1,21 +1,30 @@
 #ifndef ANT_H
 #define ANT_H
-//#include <QGraphicsItem>
+#include <QGraphicsItem>
 
 
-class Ant//: public QGraphicsItem
+class Ant: public QGraphicsItem
 {
 public:
     Ant();
-    ~Ant();
+    Ant(QColor p_Color) : color(p_Color) {}
+    virtual ~Ant();
+
     void Die();
-    /*QRectF boundingRect() const override;
-    QPainterPath shape() const override;
-    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
-    void advance(int phase) override;*/
+    virtual QRectF boundingRect() const override =0;
+    virtual QPainterPath shape() const override =0;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override =0;
+
 protected:
-    int HealthPoints;
-    bool isAQueen;
+    // Methods
+    virtual void advance(int phase) override = 0;
+
+    // Member Values
+    int m_iHealthPoints;
+    bool m_bIsAQueen;
+    qreal angle = 0;
+    qreal speed = 0;
+    QColor color;
 };
 
 #endif // ANT_H

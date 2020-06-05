@@ -3,7 +3,7 @@
 #include "ant.h"
 
 
-class StaticAnt: public Ant
+class StaticAnt//: public Ant
 {
 public:
     StaticAnt();

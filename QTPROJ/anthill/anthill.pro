@@ -21,7 +21,6 @@ SOURCES += \
     egg.cpp \
     larva.cpp \
     main.cpp \
-    mouse.cpp \
     movingant.cpp \
     pheromone.cpp \
     queen.cpp \
@@ -34,7 +33,6 @@ HEADERS += \
     anthill.h \
     egg.h \
     larva.h \
-    mouse.h \
     movingant.h \
     pheromone.h \
     queen.h \
