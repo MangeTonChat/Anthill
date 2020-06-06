@@ -3,11 +3,11 @@
 #include "movingant.h"
 
 
-class Worker//:public MovingAnt
+class Worker:public MovingAnt
 {
 public:
     Worker();
-    ~Worker();
+    virtual ~Worker() {};
     void EvolveToWarrior();
 protected:
     int RoundsToWait;

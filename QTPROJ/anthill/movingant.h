@@ -11,13 +11,13 @@ public:
 
     void Eat();
 
-    virtual QRectF boundingRect() const override = 0;
-    virtual QPainterPath shape() const override = 0;
-    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override = 0;
+    virtual QRectF boundingRect() const override;
+    virtual QPainterPath shape() const override;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
 
 protected:
     // Methods
-    virtual void advance(int phase) override = 0;
+    virtual void advance(int phase) override;
 
     int FoodConsumption;
 };
