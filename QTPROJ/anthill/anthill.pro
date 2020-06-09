@@ -21,6 +21,7 @@ SOURCES += \
     egg.cpp \
     larva.cpp \
     main.cpp \
+    map.cpp \
     movingant.cpp \
     pheromone.cpp \
     queen.cpp \
@@ -33,6 +34,7 @@ HEADERS += \
     anthill.h \
     egg.h \
     larva.h \
+    map.h \
     movingant.h \
     pheromone.h \
     queen.h \
@@ -49,3 +51,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+DISTFILES += \
+    ../../../../../../AppData/Local/Temp/cobblestone_GukVlR
