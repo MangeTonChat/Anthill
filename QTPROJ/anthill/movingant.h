@@ -6,7 +6,7 @@
 class MovingAnt: public Ant
 {
 public:
-    MovingAnt();
+    MovingAnt(Anthill* p_pAnthill);
     virtual ~MovingAnt();
 
     void Eat();

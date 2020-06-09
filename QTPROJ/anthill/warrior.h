@@ -6,7 +6,7 @@
 class Warrior:public MovingAnt
 {
 public:
-    Warrior();
+    Warrior(Anthill* p_pAnthill);
     virtual ~Warrior() {};
     void CollectFood();
     void Attack();

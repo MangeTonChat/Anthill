@@ -18,7 +18,7 @@ static qreal normalizeAngle(qreal angle)
     return angle;
 }
 
-MovingAnt::MovingAnt()
+MovingAnt::MovingAnt(Anthill* p_pAnthill) : Ant(p_pAnthill)
 {
 
 }
@@ -86,7 +86,8 @@ void MovingAnt::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->drawEllipse(-15*ScaleFactor, 15*ScaleFactor, 30*ScaleFactor, 40*ScaleFactor);
 
     // Body Middle
-    painter->setBrush(scene()->collidingItems(this).isEmpty() ? colorAntType : Qt::green);
+    //painter->setBrush(scene()->collidingItems(this).isEmpty() ? colorAntType : Qt::green);
+    painter->setBrush(colorAntType);
     painter->drawEllipse(-10*ScaleFactor, -15*ScaleFactor, 20*ScaleFactor, 30*ScaleFactor);
 
     // Head
@@ -103,10 +104,12 @@ void MovingAnt::advance(int step)
 {
     if (!step)
         return;
-    // Don't move too far away
-    QLineF lineToCenter(QPointF(0, 0), mapFromScene(0, 0));
 
-    if (lineToCenter.length() > 150)
+    // Line beetween ant and anthill center
+    QLineF lineToCenter(QPointF(0, 0), mapFromItem(m_pAnthillOwner,QPointF(0.0,0.0)));
+
+    // Not move away from the anthill, -20 because the calcul is based on ant center
+    if (lineToCenter.length() > m_pAnthillOwner->getRay() - 20)
     {
         qreal angleToCenter = std::atan2(lineToCenter.dy(), lineToCenter.dx());
         angleToCenter = normalizeAngle((Pi - angleToCenter) + Pi / 2);
@@ -121,14 +124,16 @@ void MovingAnt::advance(int step)
             // Rotate right
             angle += (angle < Pi / 2) ? 0.25 : -0.25;
         }
-    } else if (::sin(angle) < 0) {
+    }
+    else if (::sin(angle) < 0) {
         angle += 0.25;
-    } else if (::sin(angle) > 0) {
+    }
+    else if (::sin(angle) > 0) {
         angle -= 0.25;
     }
 
 
-    // Try not to crash with any other ant
+    /*// Try not to crash with any other ant
     const QList<QGraphicsItem *> dangerMice = scene()->items(QPolygonF()
                            << mapToScene(0, 0)
                            << mapToScene(-30, -50)
@@ -159,7 +164,7 @@ void MovingAnt::advance(int step)
             angle += QRandomGenerator::global()->bounded(1 / 500.0);
         else
             angle -= QRandomGenerator::global()->bounded(1 / 500.0);
-    }
+    }*/
 
     speed += (-50 + QRandomGenerator::global()->bounded(100)) / 100.0;
     speed = - speed;

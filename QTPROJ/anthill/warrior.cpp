@@ -2,8 +2,9 @@
 
 #include <QRandomGenerator>
 
-Warrior::Warrior()
+Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
  {
+
      // randomly set first rotation and color
      setRotation(QRandomGenerator::global()->bounded(360 * 16));
 
@@ -11,7 +12,4 @@ Warrior::Warrior()
 
      colorAntType = QColor(Qt::red);
 
-     colorAnthill = QColor(QRandomGenerator::global()->bounded(256),
-                    QRandomGenerator::global()->bounded(256),
-                    QRandomGenerator::global()->bounded(256));
  }

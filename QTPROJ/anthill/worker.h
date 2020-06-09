@@ -6,7 +6,7 @@
 class Worker:public MovingAnt
 {
 public:
-    Worker();
+    Worker(Anthill* p_pAnthill);
     virtual ~Worker() {};
     void EvolveToWarrior();
 protected:

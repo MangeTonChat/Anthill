@@ -2,7 +2,7 @@
 
 #include <QRandomGenerator>
 
-Worker::Worker()
+Worker::Worker(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
 {
     // randomly set first rotation and color
     setRotation(QRandomGenerator::global()->bounded(360 * 16));
@@ -10,9 +10,5 @@ Worker::Worker()
     ScaleFactor = 0.3;
 
     colorAntType = QColor(Qt::green);
-
-    colorAnthill = QColor(QRandomGenerator::global()->bounded(256),
-                   QRandomGenerator::global()->bounded(256),
-                   QRandomGenerator::global()->bounded(256));
 
 }

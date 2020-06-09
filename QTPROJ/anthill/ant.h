@@ -1,13 +1,15 @@
 #ifndef ANT_H
 #define ANT_H
+
 #include <QGraphicsItem>
+
+#include "anthill.h"
 
 
 class Ant: public QGraphicsItem
 {
 public:
-    Ant();
-    Ant(const QColor& p_ColorAnthill) {colorAnthill = p_ColorAnthill;}
+    Ant(Anthill* p_pAnthill);
     virtual ~Ant();
 
     void Die();
@@ -27,6 +29,7 @@ protected:
     // Member Values
     int m_iHealthPoints;
     bool m_bIsAQueen;
+    Anthill* m_pAnthillOwner;
     qreal ScaleFactor;
     qreal angle = 0;
     qreal speed = 0;

@@ -8,8 +8,8 @@
 #include "worker.h"
 #include "anthill.h"
 
-static constexpr int AnthillCount = 3;
-static constexpr int AntCount = 10;
+static constexpr int AnthillCount = 2;
+static constexpr int AntCount = 15;
 
 
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 
     // Set Scene
     QGraphicsScene scene;
-    scene.setSceneRect(-500, -500, 1000, 1000);
+    scene.setSceneRect(-700, -700, 1400, 1400);
     scene.setItemIndexMethod(QGraphicsScene::NoIndex);
 
     /*Anthill *anthill= new Anthill;
@@ -49,26 +49,32 @@ int main(int argc, char **argv)
     // Init anthills
     for (int i = 0; i < AnthillCount; ++i)
     {
-        Anthill *anthill= new Anthill;
-        int x = QRandomGenerator::global()->bounded(-300,300);
-        int y = QRandomGenerator::global()->bounded(-300,300);
+        // Generate random color and coord
+        int x = QRandomGenerator::global()->bounded(-500,500);
+        int y = QRandomGenerator::global()->bounded(-500,500);
+        QColor colorAnthill = QColor(QRandomGenerator::global()->bounded(256),
+                       QRandomGenerator::global()->bounded(256),
+                       QRandomGenerator::global()->bounded(256));
+       // x=0;y=0;
+
+        // Create Anthill
+        Anthill *anthill= new Anthill(qreal(150),colorAnthill);
         anthill->setPos(x,y);
         scene.addItem(anthill);
 
-        qreal ray = anthill->getRay();
-
-        Ant *queen = new Queen;
-        queen->setPos(x +ray,y + ray);
+        // Create Queen
+        Ant *queen = new Queen(anthill);
+        queen->setPos(x ,y);
         scene.addItem(queen);
 
         for (int i = 0; i < AntCount; ++i)
         {
-            int ax = QRandomGenerator::global()->bounded(anthill->getRay());
-            int ay = QRandomGenerator::global()->bounded(anthill->getRay());
-            Ant *antWorker = new Worker;
-            //Ant *antWarrior = new Warrior;
-            antWorker->setPos(x + ax , y + ay);
-            scene.addItem(antWorker);
+            double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;
+            int rayRandom = QRandomGenerator::global()->bounded(0,anthill->getRay());
+            //Ant *antWorker = new Worker;
+            Ant *antWarrior = new Warrior(anthill);
+            antWarrior->setPos(x + rayRandom*std::cos(angleRandom) , y + rayRandom*std::sin(angleRandom));
+            scene.addItem(antWarrior);
         }
     }
 
@@ -91,6 +97,7 @@ int main(int argc, char **argv)
     QTimer timer;
     QObject::connect(&timer, &QTimer::timeout, &scene, &QGraphicsScene::advance);
     timer.start(1000 / 33);
+    //timer.start(1000 / 2);
 
     return app.exec();
 }
