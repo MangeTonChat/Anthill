@@ -3,6 +3,8 @@
 
 #include "ant.h"
 #include "warrior.h"
+#include "map.h"
+
 
 static constexpr int AntCount = 100;
 
@@ -14,11 +16,12 @@ int main(int argc, char **argv)
 
 //! [1]
     QGraphicsScene scene;
-    scene.setSceneRect(-300, -300, 600, 600);
+    scene.setSceneRect(-500, -500, 1000, 1000);
 //! [1] //! [2]
     scene.setItemIndexMethod(QGraphicsScene::NoIndex);
 //! [2]
-
+    Map Carte(&scene);
+    Carte.Generate();
 //! [3]
     for (int i = 0; i < AntCount; ++i) {
         Ant *ant = new Warrior;
@@ -38,7 +41,9 @@ int main(int argc, char **argv)
     view.setDragMode(QGraphicsView::ScrollHandDrag);
 //! [5] //! [6]
     view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Sweaty Anthill"));
-    view.resize(400, 300);
+    //view.resize(1100, 1100);
+    //view.showFullScreen();
+    view.showMaximized();
     view.show();
 
     QTimer timer;
