@@ -3,11 +3,11 @@
 #include "movingant.h"
 
 
-class Queen//:public MovingAnt
+class Queen:public MovingAnt
 {
 public:
-    Queen();
-    ~Queen();
+    Queen(Anthill* p_pAnthill);
+    virtual ~Queen() {};
     void LayEgg();
     void SignalAnthillUnderAttack();
     void SignalAnthillSafe();

@@ -1,30 +1,40 @@
 #ifndef ANT_H
 #define ANT_H
+
 #include <QGraphicsItem>
+
+#include "anthill.h"
 
 
 class Ant: public QGraphicsItem
 {
 public:
-    Ant();
-    Ant(QColor p_Color) : color(p_Color) {}
+    Ant(Anthill* p_pAnthill);
     virtual ~Ant();
 
     void Die();
+
+    // QGraphics Item
     virtual QRectF boundingRect() const override =0;
     virtual QPainterPath shape() const override =0;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override =0;
 
 protected:
     // Methods
-    virtual void advance(int phase) override = 0;
+    virtual void advance(int phase) override = 0; // QGraphicsItem
+
+    virtual void setColors(const QColor& p_ColorAnthill, const QColor& p_ColorAntType) {colorAnthill = p_ColorAnthill; colorAntType = p_ColorAntType;}
+    virtual void setScaleFactor(const qreal& p_ScaleFactor) {ScaleFactor = p_ScaleFactor;}
 
     // Member Values
     int m_iHealthPoints;
     bool m_bIsAQueen;
+    Anthill* m_pAnthillOwner;
+    qreal ScaleFactor;
     qreal angle = 0;
     qreal speed = 0;
-    QColor color;
+    QColor colorAnthill;
+    QColor colorAntType;
 };
 
 #endif // ANT_H
