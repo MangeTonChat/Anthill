@@ -26,6 +26,7 @@ SOURCES += \
     pheromone.cpp \
     queen.cpp \
     staticant.cpp \
+    view.cpp \
     warrior.cpp \
     worker.cpp
 
@@ -39,6 +40,7 @@ HEADERS += \
     pheromone.h \
     queen.h \
     staticant.h \
+    view.h \
     warrior.h \
     worker.h
 

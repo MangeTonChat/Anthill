@@ -8,11 +8,12 @@
 #include "map.h"
 #include "worker.h"
 #include "anthill.h"
+#include "view.h"
 
-static constexpr int AnthillCount = 20;
+static constexpr int AnthillCount = 5;
 static constexpr int AnthillRay = 150;
-static constexpr int AntCount = 15;
-static constexpr int BorderLength = 1000 ;
+static constexpr int AntCount = 5;
+static constexpr int BorderLength = 1500 ;
 
 
 int main(int argc, char **argv)
@@ -57,7 +58,9 @@ int main(int argc, char **argv)
     // Init anthills
     for (int i = 0; i < AnthillCount; ++i)
     {
+        // Avoid Anthill creation in the border
         int SpaceToGenerate = BorderLength - WidthCobble - AnthillRay;
+
         // Generate random color and coord
         int x = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
         int y = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
@@ -71,16 +74,29 @@ int main(int argc, char **argv)
         anthill->setPos(x,y);
         scene.addItem(anthill);
 
+
         // Create Queen
         Ant *queen = new Queen(anthill);
         queen->setPos(x ,y);
         scene.addItem(queen);
 
+        // Create worker
         for (int i = 0; i < AntCount; ++i)
         {
+            // Generate ant in the anthill
             double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;
             int rayRandom = QRandomGenerator::global()->bounded(0,anthill->getRay());
-            //Ant *antWorker = new Worker;
+            Ant *antWorker = new Worker(anthill);
+            antWorker->setPos(x + rayRandom*std::cos(angleRandom) , y + rayRandom*std::sin(angleRandom));
+            scene.addItem(antWorker);
+        }
+
+        // Create Warrior
+        for (int i = 0; i < AntCount; ++i)
+        {
+            // Generate ant in the anthill
+            double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;
+            int rayRandom = QRandomGenerator::global()->bounded(0,anthill->getRay());
             Ant *antWarrior = new Warrior(anthill);
             antWarrior->setPos(x + rayRandom*std::cos(angleRandom) , y + rayRandom*std::sin(angleRandom));
             scene.addItem(antWarrior);
@@ -88,18 +104,11 @@ int main(int argc, char **argv)
     }
 
     // Set View and background
-    QGraphicsView view(&scene);
-    view.setRenderHint(QPainter::Antialiasing);
-    view.setBackgroundBrush(QPixmap(":/images/dirt.png"));
-
-    // Set QGraphicsView Mode
-    view.setCacheMode(QGraphicsView::CacheBackground);
-    view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
-    view.setDragMode(QGraphicsView::ScrollHandDrag);
+    View view;
+    view.setScene(&scene);
 
     // Set Title and init window size
     view.setWindowTitle(QT_TRANSLATE_NOOP(QGraphicsView, "Sweaty Anthill"));
-
     view.showMaximized();
 
     // Set FPS

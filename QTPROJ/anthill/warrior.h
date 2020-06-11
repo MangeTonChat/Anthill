@@ -16,6 +16,7 @@ public:
 
 protected:
     // Methods
+    virtual void advance(int phase) override;
 
     // Member values
     int FoodStock;
