@@ -9,7 +9,9 @@ public:
     Warrior(Anthill* p_pAnthill);
     virtual ~Warrior() {};
     void CollectFood();
-    void Attack();
+
+    void Attack(Warrior* Enemy, int damage);
+
     void DropPheromones();
     void FollowPheromones();
     void Explore();
@@ -20,7 +22,7 @@ protected:
 
     bool isCloseToBorder() const;
 
-    void moveAngleTowards(const QPointF& PointInSceneCoordinate);
+    void moveAngleTowards(const QPointF& PointInItemCoordinate);
 
     // Member values
     int FoodStock;

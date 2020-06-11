@@ -12,7 +12,11 @@ public:
     Ant(Anthill* p_pAnthill);
     virtual ~Ant();
 
-    void Die();
+    void Die() {this->~Ant();}
+
+
+
+    const Anthill* getAnthill() const {return m_pAnthillOwner;}
 
     // QGraphics Item
     virtual QRectF boundingRect() const override =0;
@@ -27,12 +31,13 @@ protected:
     virtual void setScaleFactor(const qreal& p_ScaleFactor) {ScaleFactor = p_ScaleFactor;}
 
     // Member Values
-    int m_iHealthPoints;
+    const int MaxHealthPoint = 1000;
+    int m_iHealthPoints = MaxHealthPoint;
     bool m_bIsAQueen;
     Anthill* m_pAnthillOwner;
     qreal ScaleFactor;
     qreal angle = 0;
-    qreal speed = 0;
+    qreal speed = -3;
     QColor colorAnthill;
     QColor colorAntType;
 };

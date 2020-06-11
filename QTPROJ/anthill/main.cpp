@@ -12,7 +12,7 @@
 
 static constexpr int AnthillCount = 5;
 static constexpr int AnthillRay = 150;
-static constexpr int AntCount = 5;
+static constexpr int AntCount = 15;
 static constexpr int BorderLength = 1500 ;
 
 
@@ -73,7 +73,6 @@ int main(int argc, char **argv)
         Anthill *anthill= new Anthill(qreal(AnthillRay),colorAnthill);
         anthill->setPos(x,y);
         scene.addItem(anthill);
-
 
         // Create Queen
         Ant *queen = new Queen(anthill);
