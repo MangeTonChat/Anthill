@@ -18,6 +18,10 @@ protected:
     // Methods
     virtual void advance(int phase) override;
 
+    bool isCloseToBorder() const;
+
+    void moveAngleTowards(const QPointF& PointInSceneCoordinate);
+
     // Member values
     int FoodStock;
     int FoodCapacity;
