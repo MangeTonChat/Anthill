@@ -1,9 +1,10 @@
 #include "map.h"
 
+
 void Map::Generate(){
+
     //External border construction
-    //int walker[int x, int y];
-    QPixmap Cobble = QPixmap(":/images/cobblestone.png");
+    QPixmap Cobble = QPixmap(":/images/stone_bricks.png");
     int WidthCobble = Cobble.width()/2;
     //Two horizontal limits
     for(int x=-Scene->width()/2; x<Scene->width()/2-WidthCobble; x+=WidthCobble){
@@ -27,6 +28,7 @@ void Map::Generate(){
         border2->setPos(Scene->width()/2-WidthCobble,y);
         Scene->addItem(border2);
     }
+    //Last cobble to complete the map
     QGraphicsPixmapItem* border=new QGraphicsPixmapItem(Cobble);
     border->setScale(0.5);
     border->setPos(Scene->width()/2-WidthCobble,Scene->height()/2-WidthCobble);

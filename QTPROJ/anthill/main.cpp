@@ -1,6 +1,7 @@
 #include <QtMath>
 #include <QtWidgets>
 #include <QRandomGenerator>
+#include <QDebug>
 
 #include "ant.h"
 #include "queen.h"
@@ -8,11 +9,15 @@
 #include "map.h"
 #include "worker.h"
 #include "anthill.h"
+#include "Beef.h"
 
-static constexpr int AnthillCount = 20;
+static constexpr int AnthillCount = 10;
 static constexpr int AnthillRay = 150;
 static constexpr int AntCount = 15;
+static constexpr double PercentageOfBeef = 0.04 ;
 static constexpr int BorderLength = 1000 ;
+static constexpr double PercentageOfObstacle = 0.07 ;
+static constexpr int PercentageOfWall = 50;
 
 
 int main(int argc, char **argv)
@@ -52,12 +57,12 @@ int main(int argc, char **argv)
     }*/
 
     // needed
-    int WidthCobble = (QPixmap(":/images/cobblestone.png").width()/2) + 3;
+    int WidthCobble = (QPixmap(":/images/cobblestone.png").width()/2);
 
     // Init anthills
+    int SpaceToGenerate = BorderLength - WidthCobble + 3 - AnthillRay;
     for (int i = 0; i < AnthillCount; ++i)
     {
-        int SpaceToGenerate = BorderLength - WidthCobble - AnthillRay;
         // Generate random color and coord
         int x = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
         int y = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
@@ -70,20 +75,97 @@ int main(int argc, char **argv)
         Anthill *anthill= new Anthill(qreal(AnthillRay),colorAnthill);
         anthill->setPos(x,y);
         scene.addItem(anthill);
-
-        // Create Queen
-        Ant *queen = new Queen(anthill);
-        queen->setPos(x ,y);
-        scene.addItem(queen);
-
-        for (int i = 0; i < AntCount; ++i)
+        if(!scene.collidingItems(anthill).isEmpty())
         {
-            double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;
-            int rayRandom = QRandomGenerator::global()->bounded(0,anthill->getRay());
-            //Ant *antWorker = new Worker;
-            Ant *antWarrior = new Warrior(anthill);
-            antWarrior->setPos(x + rayRandom*std::cos(angleRandom) , y + rayRandom*std::sin(angleRandom));
-            scene.addItem(antWarrior);
+            i--;
+            delete anthill;
+        }
+        else
+        {
+            // Create Queen
+            Ant *queen = new Queen(anthill);
+            queen->setPos(x ,y);
+            scene.addItem(queen);
+
+            for (int i = 0; i < AntCount; ++i)
+            {
+                double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;
+                int rayRandom = QRandomGenerator::global()->bounded(0,anthill->getRay());
+                //Ant *antWorker = new Worker;
+                Ant *antWarrior = new Warrior(anthill);
+                antWarrior->setPos(x + rayRandom*std::cos(angleRandom) , y + rayRandom*std::sin(angleRandom));
+                scene.addItem(antWarrior);
+            }
+        }
+    }
+
+    //Generate some random obstacles
+    QPixmap Obstacle = QPixmap(":/images/cobblestone.png");
+    SpaceToGenerate = BorderLength - WidthCobble - Obstacle.width()/2;
+    for(double i=PercentageOfObstacle*BorderLength; i>0; i--){
+
+        QGraphicsPixmapItem* randomObstacle=new QGraphicsPixmapItem(Obstacle);
+        randomObstacle->setScale(0.5);
+        int x = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
+        int y = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
+        randomObstacle->setPos(x,y);
+        scene.addItem(randomObstacle);
+        if(!scene.collidingItems(randomObstacle).isEmpty()) {
+            i++;
+            delete randomObstacle;
+        }
+        else{
+            //We need to build a wall
+            if(QRandomGenerator::global()->bounded(0,100)<=PercentageOfWall)
+            {
+                int length = QRandomGenerator::global()->bounded(3,5);
+                for(int j=0;j<length;j++)
+                {
+                    QGraphicsPixmapItem* newWall=new QGraphicsPixmapItem(Obstacle);
+                    newWall->setScale(0.5);
+                    int direction = QRandomGenerator::global()->bounded(0,3);
+                    if(direction==0){
+                        x=x+WidthCobble;
+                        newWall->setPos(x,y);
+                    }
+                    if(direction==1){
+                        y=y-WidthCobble;
+                        newWall->setPos(x,y);
+                    }
+                    if(direction==2){
+                        x=x-WidthCobble;
+                        newWall->setPos(x,y);
+                    }
+                    if(direction==3){
+                        y=y+WidthCobble;
+                        newWall->setPos(x,y);
+                    }
+                    scene.addItem(newWall);
+                    if(!scene.collidingItems(newWall).isEmpty()||qFabs(newWall->pos().x())>SpaceToGenerate||qFabs(newWall->pos().y())>SpaceToGenerate)
+                    {
+                        i++;
+                        delete newWall;
+                    }
+                }
+                i-=length-1;
+            }
+        }
+    }
+
+    //Generate some random bouffe
+    QPixmap BeefPixmap = QPixmap(":/images/beef.png");
+    SpaceToGenerate = BorderLength - WidthCobble - BeefPixmap.width()/2;
+    for(double i=PercentageOfBeef*BorderLength; i>0; i--){
+        Beef* randomBeef=new Beef(BeefPixmap);
+        randomBeef->setScale(0.5);
+        int x = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
+        int y = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
+        randomBeef->setPos(x,y);
+        scene.addItem(randomBeef);
+        //No collision allowed
+        if(!scene.collidingItems(randomBeef).isEmpty()) {
+            i++;
+            delete randomBeef;
         }
     }
 

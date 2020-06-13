@@ -30,6 +30,7 @@ SOURCES += \
     worker.cpp
 
 HEADERS += \
+    Beef.h \
     ant.h \
     anthill.h \
     egg.h \

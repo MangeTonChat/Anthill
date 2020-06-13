@@ -6,5 +6,6 @@
         <file>images/dirt3.png</file>
         <file>images/cobblestone.png</file>
         <file>images/beef.png</file>
+        <file>images/stone_bricks.png</file>
     </qresource>
 </RCC>
