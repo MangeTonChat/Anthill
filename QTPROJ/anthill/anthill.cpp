@@ -27,10 +27,28 @@ void Anthill::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget
 
     painter->drawEllipse(-m_rRay,-m_rRay,2*m_rRay,2*m_rRay);
     painter->setBrush(Qt::green);
+
+    // Foodbar
+    painter->setBrush(Qt::green);
+    painter->drawRect(-m_rRay, -m_rRay - 15,2*m_rRay,7);
+    painter->setBrush(Qt::red);
+    painter->drawRect(-m_rRay ,-m_rRay - 15,2*m_rRay*(1- ((double)AnthillFoodStock/MaxFoodStock)),7);
 }
 
 
 void Anthill::advance(int )
 {
     // it doesn't move
+}
+
+bool Anthill::consumeFoodStock(int p_Unit)
+{
+    if (AnthillFoodStock -  p_Unit > 0)
+    {
+        AnthillFoodStock -= p_Unit;
+        return true;
+    }
+
+    return false;
+
 }

@@ -10,6 +10,8 @@ public:
     Anthill(const qreal& p_ray, const QColor& p_anthillColor) : m_rRay(p_ray), colorAnthill(p_anthillColor)  {}
     virtual ~Anthill() {};
 
+    bool consumeFoodStock(int p_Unit);
+
     QColor const getColor() const {return colorAnthill;}
 
     QRectF boundingRect() const override;
@@ -25,9 +27,9 @@ protected:
     int InitialAntNumber;
     int AntNumber;
     int MaxAntNumber;
-    int InitialFoodStock;
-    int AnthillFoodStock;
-    int MaxFoodStock;
+    const int MaxFoodStock = 10000;
+    int AnthillFoodStock = MaxFoodStock;
+
 };
 
 #endif // ANTHILL_H

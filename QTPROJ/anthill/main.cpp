@@ -55,12 +55,12 @@ int main(int argc, char **argv)
     // needed
     int WidthCobble = (QPixmap(":/images/cobblestone.png").width()/2) + 3;
 
+    // Avoid Anthill creation in the border
+    int SpaceToGenerate = BorderLength - WidthCobble - AnthillRay;
+
     // Init anthills
     for (int i = 0; i < AnthillCount; ++i)
     {
-        // Avoid Anthill creation in the border
-        int SpaceToGenerate = BorderLength - WidthCobble - AnthillRay;
-
         // Generate random color and coord
         int x = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);
         int y = QRandomGenerator::global()->bounded(-SpaceToGenerate,SpaceToGenerate);

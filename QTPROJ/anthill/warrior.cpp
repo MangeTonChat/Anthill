@@ -36,7 +36,6 @@ void Warrior::Attack(Warrior* Enemy, int damage)
     if(Enemy->m_iHealthPoints <0)
     {
         Enemy->Die();
-        speed = -3;
     }
 
 }

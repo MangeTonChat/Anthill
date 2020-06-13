@@ -14,6 +14,8 @@ public:
 
     void Die() {this->~Ant();}
 
+    bool eatToSurvive();
+
 
 
     const Anthill* getAnthill() const {return m_pAnthillOwner;}

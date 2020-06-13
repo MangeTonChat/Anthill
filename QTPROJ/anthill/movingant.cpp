@@ -115,6 +115,11 @@ void MovingAnt::advance(int step)
     if (!step)
         return;
 
+    // Hungry Ant
+    if(!eatToSurvive())
+        return;
+
+
     // Line beetween ant and anthill center
     QLineF lineToCenter(QPointF(0, 0), mapFromItem(m_pAnthillOwner,QPointF(0.0,0.0)));
 
