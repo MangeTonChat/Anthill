@@ -98,12 +98,27 @@ void MovingAnt::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
     painter->setBrush(Qt::black);
     painter->drawEllipse(-9*ScaleFactor, -38*ScaleFactor, 8*ScaleFactor, 8*ScaleFactor);
     painter->drawEllipse(1*ScaleFactor, -38*ScaleFactor, 8*ScaleFactor, 8*ScaleFactor);
+
+    // Healthbar
+    if(m_iHealthPoints < MaxHealthPoint)
+    {
+        painter->setBrush(Qt::green);
+        painter->drawRect(-15,-20,30,5);
+        painter->setBrush(Qt::red);
+        painter->drawRect(-15,-20,30*(1- ((double)m_iHealthPoints/MaxHealthPoint)),5);
+    }
+
 }
 
 void MovingAnt::advance(int step)
 {
     if (!step)
         return;
+
+    // Hungry Ant
+    if(!eatToSurvive())
+        return;
+
 
     // Line beetween ant and anthill center
     QLineF lineToCenter(QPointF(0, 0), mapFromItem(m_pAnthillOwner,QPointF(0.0,0.0)));
@@ -166,11 +181,11 @@ void MovingAnt::advance(int step)
             angle -= QRandomGenerator::global()->bounded(1 / 500.0);
     }*/
 
-    speed += (-50 + QRandomGenerator::global()->bounded(100)) / 100.0;
-    speed = - speed;
+    /*speed += (-50 + QRandomGenerator::global()->bounded(100)) / 100.0;
+    speed = - speed;*/
 
     qreal dx = sin(angle) * 10;
 
     setRotation(rotation() + dx);
-    setPos(mapToParent(0, -(3 + sin(speed) * 3)));
+    setPos(mapToParent(0, speed));
 }
