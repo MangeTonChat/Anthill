@@ -83,6 +83,7 @@ void Warrior::advance(int step)
     if(isCloseToBorder())
     {
         moveAngleTowards(mapFromScene(QPointF(0.0,0.0))); // Move towards the scene center
+
     }
     // Magic Trick
     else if (sin(angle) < 0) {
@@ -92,25 +93,70 @@ void Warrior::advance(int step)
         angle -= 0.25;
     }
 
-    // Grab items in a triangle in front of the ant
-    /*const QList<QGraphicsItem *> aroundItems = scene()->items(QPolygonF()
-                           << mapToScene(0, 0)
-                           << mapToScene(-40, -60)
-                           << mapToScene(40, -60));*/
+    // Final compute for angle and position
+    qreal dx = sin(angle) * 10;
+    setRotation(rotation() + dx);
 
     // Grab item in a circle around the ant
     QPainterPath circleDetection;
-    circleDetection.addEllipse(mapToScene(QPointF(0,0)), 60 , 60);
+    circleDetection.addEllipse(mapToScene(QPointF(0, -38*ScaleFactor)), 46 , 46);
     const QList<QGraphicsItem *> aroundItems = scene()->items(circleDetection);
+    /*const QList<QGraphicsItem *> aroundItems= scene()->collidingItems(this);*/
+
+    //qDebug() << "nombre en contact : " << aroundItems.size();
 
     bool isThereEnemies = false; // To reset Speed
+    double l_dClosestDistToObstacle = 999;
+    double l_dSpeedFactor = 999;
+    int l_iRightOrLeft = 1 ; // 1 right , -1 left
 
-    // Search for enemy
+    // Search for others items
     for (QGraphicsItem *item : aroundItems)
     {
         if (item == this) // No action for self
             continue;
 
+        // Obstacle Check
+        Obstacle* obstacle = dynamic_cast<Obstacle*>(item);
+
+        // if cast is sucessfull
+        if (obstacle)
+        {
+            // Line, head to
+            QPointF obstacleCenter = mapFromItem(obstacle,QPointF(64,64));
+            QLineF lineToObstacle(QPointF(0, -38*ScaleFactor), obstacleCenter);
+
+            // Reduce speed in order to not collide with the obstacle
+            double obstacleRay = (64/2)*std::sqrt(2); // Width is 64 , 32 , circle around the obstacle
+            double distToStop = 30; // pixel to slow down to speed = 0
+            double distToBeginSlowDown = obstacleRay + distToStop;
+
+            double speedFactor = -((lineToObstacle.length() - distToBeginSlowDown ) / distToStop);
+
+            if(lineToObstacle.length() <= distToBeginSlowDown && lineToObstacle.length() <  l_dClosestDistToObstacle)
+            {
+
+                l_dClosestDistToObstacle = lineToObstacle.length(); // just take the closest one into account
+                l_dSpeedFactor = speedFactor;
+
+                qreal Quad = std::atan2((obstacleCenter.y() > 0 ) ? 1 : -1, (obstacleCenter.x() > 0) ? 1 : -1);
+
+                if (Quad <= Pi / 2  && Quad <= -Pi /2 )
+                {
+                    // Rotate right
+                    l_iRightOrLeft = 1;
+                }
+                else
+                {
+                    // Rotate left
+                    l_iRightOrLeft = -1;
+                }
+
+            }
+
+        }
+
+        // Warrior Check
         Warrior* Enemy = dynamic_cast<Warrior*>(item);
 
         // If cast is sucessfull
@@ -126,21 +172,36 @@ void Warrior::advance(int step)
                 Attack(Enemy,QRandomGenerator::global()->bounded(10)); // ATTACK DA ENEMY , 1 - 10 damage
                 isThereEnemies= true; // sweatflag
             }
-
+            //continue;
         }
+    }
 
+    // Final obstacle managment
+    if(l_dClosestDistToObstacle != 999)
+    {
+            // Compute new speed
+            l_dSpeedFactor = (l_dSpeedFactor <= 1) ? l_dSpeedFactor : 1 ;
+
+            speed =  -3*( 1 - l_dSpeedFactor);
+
+            if (speed > -0.09 ) speed = 0 ; // Round problem
+
+            // rotation
+            setRotation(rotation() + 5*l_iRightOrLeft);
 
     }
 
-    // Reset Speed if needed
+
+   /* // Reset Speed if needed
     if (speed > -3  && !isThereEnemies )
-        speed = -3;
+        speed = -3;*/
 
     // TODO : Move Randomly to search for beef
 
     // Final compute for angle and position
-    qreal dx = sin(angle) * 10;
+    //qreal dx = sin(angle) * 10;
+    //qDebug() << " dx : " << dx << " / angle : " << angle << " / rotation() + dx " << rotation() + dx;
 
-    setRotation(rotation() + dx);
+    //setRotation(rotation() + dx);
     setPos(mapToParent(0, speed));
 }

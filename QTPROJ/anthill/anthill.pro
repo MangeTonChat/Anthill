@@ -38,6 +38,7 @@ HEADERS += \
     larva.h \
     map.h \
     movingant.h \
+    obstacle.h \
     pheromone.h \
     queen.h \
     staticant.h \

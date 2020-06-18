@@ -27,7 +27,7 @@ protected:
     int InitialAntNumber;
     int AntNumber;
     int MaxAntNumber;
-    const int MaxFoodStock = 10000;
+    const int MaxFoodStock = 30000;
     int AnthillFoodStock = MaxFoodStock;
 
 };

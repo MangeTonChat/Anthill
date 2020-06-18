@@ -2,6 +2,7 @@
 #define WARRIOR_H
 #include "movingant.h"
 #include "Beef.h"
+#include "obstacle.h"
 
 
 class Warrior:public MovingAnt
