@@ -22,8 +22,6 @@ protected:
     // Methods
     virtual void advance(int phase) override;
 
-    bool isCloseToBorder() const;
-
     void moveAngleTowards(const QPointF& PointInItemCoordinate);
 
     // Member values

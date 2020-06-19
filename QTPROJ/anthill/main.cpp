@@ -16,11 +16,14 @@
 
 static constexpr int    AnthillCount            = 2;
 static constexpr int    AnthillRay              = 100;
-static constexpr int    AntCount                = 50;
+static constexpr int    AntCount                = 10;
 static constexpr int    BorderLength            = 1000 ; // Scene size , it's a square
-static constexpr double PercentageOfBeef        = 0 ; //  %
+static constexpr double PercentageOfBeef        = 10 ; //  %
 static constexpr double PercentageOfObstacle    = 40 ; // %
 static constexpr int    PercentageOfWall        = 100; // percent of continuous walls
+static constexpr int    WallMinLength           = 3;
+static constexpr int    WallMaxLength           = 20;
+
 
 
 int main(int argc, char **argv)
@@ -125,7 +128,7 @@ int main(int argc, char **argv)
             //We need to build a wall , PercentageOfWall chances of wall creation
             if(QRandomGenerator::global()->bounded(0,100)<=PercentageOfWall)
             {
-                int wallLength = QRandomGenerator::global()->bounded(3,5); // random length
+                int wallLength = QRandomGenerator::global()->bounded(WallMinLength,WallMaxLength); // random length
                 for(int j=0;j<wallLength;j++)
                 {
                     Obstacle* newWall = new Obstacle(l_Obstacle);

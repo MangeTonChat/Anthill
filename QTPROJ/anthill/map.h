@@ -2,6 +2,8 @@
 #define MAP_H
 #include <QtWidgets>
 
+#include "obstacle.h"
+
 
 class Map
 {
