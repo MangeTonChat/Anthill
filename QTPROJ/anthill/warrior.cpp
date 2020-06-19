@@ -135,13 +135,14 @@ void Warrior::advance(int step)
 
             if(lineToObstacle.length() <= distToBeginSlowDown && lineToObstacle.length() <  l_dClosestDistToObstacle)
             {
-
+                // Store needed data
                 l_dClosestDistToObstacle = lineToObstacle.length(); // just take the closest one into account
                 l_dSpeedFactor = speedFactor;
 
+                // Check the quad
                 qreal Quad = std::atan2((obstacleCenter.y() > 0 ) ? 1 : -1, (obstacleCenter.x() > 0) ? 1 : -1);
 
-                if (Quad <= Pi / 2  && Quad <= -Pi /2 )
+                /*if (Quad <= Pi / 2  && Quad >= -Pi /2 )
                 {
                     // Rotate right
                     l_iRightOrLeft = 1;
@@ -150,7 +151,38 @@ void Warrior::advance(int step)
                 {
                     // Rotate left
                     l_iRightOrLeft = -1;
+                }*/
+
+                if  ( Quad > - Pi && Quad < -Pi/2) // Quad 3
+                {
+                    // Rotate right
+                    l_iRightOrLeft = 1;
+                    qDebug() << " Quad 3 ";
                 }
+                else if ( Quad < 0    && Quad > - Pi / 2 )// Quad 4
+                {
+                    // Rotate left
+                    l_iRightOrLeft = -1;
+                    qDebug() << " Quad 4 ";
+                }
+                else if ( Quad > 0    && Quad < Pi /2) // Quad 1
+                {
+                    l_dClosestDistToObstacle = 999;
+                    qDebug() << " Quad 1 ";
+                }
+                else
+                {
+                    l_dClosestDistToObstacle = 999;
+                    qDebug() << " Quad 2 ";
+                }
+
+
+                /*
+                 * if ( Quad > 0    && Quad < Pi /2) // Quad 1
+                 * if ( Quad > Pi/2 && Quad < Pi ) // Quad 2
+                 * if ( Quad < 0    && Quad > - Pi / 2 )// Quad 4
+                 * if ( Quad > - Pi && Quad < -Pi/2) // Quad 3
+                */
 
             }
 
@@ -168,7 +200,7 @@ void Warrior::advance(int step)
                 // FIGHT
                 moveAngleTowards(mapFromItem(Enemy, QPointF(0,0))); // Incline towards the enemy
                 //QLineF lineToCenter(QPointF(0, 0), mapFromItem(Enemy, QPointF(0,0))); // Idea to decrease speed as enemy come closer
-                speed -= speed*0.04; // Reduce speed from 4% each frame
+                speed -= speed*0.05; // Reduce speed from 4% each frame
                 Attack(Enemy,QRandomGenerator::global()->bounded(10)); // ATTACK DA ENEMY , 1 - 10 damage
                 isThereEnemies= true; // sweatflag
             }
@@ -189,10 +221,16 @@ void Warrior::advance(int step)
             // rotation
             setRotation(rotation() + 5*l_iRightOrLeft);
 
+            // Other magic trick
+            if(speed ==0 )
+                setRotation(rotation() + 30);
+
     }
+    else if (speed > -3 && !isThereEnemies)
+        speed = -3;
 
 
-   /* // Reset Speed if needed
+   /*// Reset Speed if needed
     if (speed > -3  && !isThereEnemies )
         speed = -3;*/
 

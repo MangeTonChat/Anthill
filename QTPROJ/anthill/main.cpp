@@ -14,13 +14,13 @@
 #include "obstacle.h"
 
 
-static constexpr int    AnthillCount            = 1;
+static constexpr int    AnthillCount            = 2;
 static constexpr int    AnthillRay              = 100;
-static constexpr int    AntCount                = 30;
+static constexpr int    AntCount                = 50;
 static constexpr int    BorderLength            = 1000 ; // Scene size , it's a square
 static constexpr double PercentageOfBeef        = 0 ; //  %
-static constexpr double PercentageOfObstacle    = 50 ; // %
-static constexpr int    PercentageOfWall        = 60; // percent of continuous walls
+static constexpr double PercentageOfObstacle    = 40 ; // %
+static constexpr int    PercentageOfWall        = 100; // percent of continuous walls
 
 
 int main(int argc, char **argv)
