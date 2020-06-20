@@ -17,9 +17,8 @@ static qreal normalizeAngle(qreal angle)
     return angle;
 }
 
-Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
- {
-
+Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill), m_bOnMyWayHome(false),m_bOnMyWayAway(false), FoodStock(0)
+{
      // randomly set first rotation and color
      setRotation(QRandomGenerator::global()->bounded(360 * 16));
 
@@ -38,6 +37,20 @@ void Warrior::Attack(Warrior* Enemy, int damage)
         Enemy->Die();
     }
 
+}
+
+void Warrior::paint(QPainter *painter, const QStyleOptionGraphicsItem *_1, QWidget *_2)
+{
+    MovingAnt::paint(painter,_1,_2);
+
+    // TODO : Possible animation quand la fourmis attaque
+    /*
+    bool isAttacking = true;
+
+    if(isAttacking)
+    {
+
+    }*/
 }
 
 
@@ -71,37 +84,20 @@ void Warrior::advance(int step)
     if (!step)
         return;
 
-    /*// Don't go outside the Scene Border
-    if(isCloseToBorder())
-    {
-        moveAngleTowards(mapFromScene(QPointF(0.0,0.0))); // Move towards the scene center
-    }
-    // Magic Trick
-    else if (sin(angle) < 0) {
-        angle += 0.25;
-    }
-    else if (sin(angle) > 0) {
-        angle -= 0.25;
-    }
-
-    // Final compute for angle and position
-    qreal dx = sin(angle) * 10;
-    setRotation(rotation() + dx);*/
-
     // Grab item in a circle around the ant
     QPainterPath circleDetection;
     circleDetection.addEllipse(mapToScene(QPointF(0, -38*ScaleFactor)), 46 , 46);
     const QList<QGraphicsItem *> aroundItems = scene()->items(circleDetection);
     /*const QList<QGraphicsItem *> aroundItems= scene()->collidingItems(this);*/
 
-    //qDebug() << "nombre en contact : " << aroundItems.size();
-
     bool isThereEnemies = false; // To reset Speed
+    bool isThereBeef = false;
     double l_dClosestDistToObstacle = 999;
     double l_dSpeedFactor = 999;
     int l_iRightOrLeft = 1 ; // 1 right , -1 left
 
     bool l_bCanAttack = true;
+    //bool flagStopForGoHome = false;
 
     // Search for others items
     for (QGraphicsItem *item : aroundItems)
@@ -115,7 +111,7 @@ void Warrior::advance(int step)
         // if cast is sucessfull
         if (obstacle)
         {
-            // Line, head to
+            // Line, head to obstacle center
             QPointF obstacleCenter = mapFromItem(obstacle,QPointF(64,64));
             QLineF lineToObstacle(QPointF(0, -38*ScaleFactor), obstacleCenter);
 
@@ -149,9 +145,9 @@ void Warrior::advance(int step)
                 }
                 else // Quad 1 or 2
                 {
+                    // Don't Rotate
                     l_dClosestDistToObstacle = 999;
                 }
-
 
                 /*
                  * if ( Quad > 0    && Quad < Pi /2) // Quad 1
@@ -159,32 +155,65 @@ void Warrior::advance(int step)
                  * if ( Quad < 0    && Quad > - Pi / 2 )// Quad 4
                  * if ( Quad > - Pi && Quad < -Pi/2) // Quad 3
                 */
-
-            }
-
+            }    
+            continue;
         }
 
-        // To attack only one ant per frame
-        if ( l_bCanAttack )
+        // Ignore beef and enemy while head back to the anthill
+        if(!m_bOnMyWayHome)
         {
-            // Warrior Check
-            Warrior* Enemy = dynamic_cast<Warrior*>(item);
-
-            // If cast is sucessfull
-            if(Enemy)
+            // To attack only one ant per frame
+            if ( l_bCanAttack )
             {
-                // If its not an ant from Home Anthill
-                if (Enemy->getAnthill() != m_pAnthillOwner)
+                // Warrior Check
+                Warrior* Enemy = dynamic_cast<Warrior*>(item);
+
+                // If cast is sucessfull
+                if(Enemy)
                 {
-                    // FIGHT
-                    moveAngleTowards(mapFromItem(Enemy, QPointF(0,0))); // Incline towards the enemy
-                    //QLineF lineToCenter(QPointF(0, 0), mapFromItem(Enemy, QPointF(0,0))); // Idea to decrease speed as enemy come closer
-                    speed -= speed*0.09; // Reduce speed from 5% each frame
-                    Attack(Enemy,QRandomGenerator::global()->bounded(10)); // ATTACK DA ENEMY , 1 - 10 damage
-                    isThereEnemies= true; // sweatflag
+                    // If its not an ant from Home Anthill
+                    if (Enemy->getAnthill() != m_pAnthillOwner)
+                    {
+                        // FIGHT
+                        moveAngleTowards(mapFromItem(Enemy, QPointF(0,0))); // Incline towards the enemy
+                        //QLineF lineToCenter(QPointF(0, 0), mapFromItem(Enemy, QPointF(0,0))); // Idea to decrease speed as enemy come closer
+                        speed -= speed*0.09; // Reduce speed from 9% each frame
+                        Attack(Enemy,QRandomGenerator::global()->bounded(10)); // ATTACK DA ENEMY , 1 - 10 damage
+                        isThereEnemies= true; // sweatflag
+                    }
+                    l_bCanAttack = false;
+                    continue;
                 }
-                l_bCanAttack = false;
             }
+
+            // Beef Check
+            Beef* SweatBeef = dynamic_cast<Beef*>(item);
+
+            if(SweatBeef && FoodStock <= FoodCapacity)
+            {
+                int l_iUnitToEat = 10;
+                if(SweatBeef->getEated(l_iUnitToEat))
+                {
+                    moveAngleTowards(mapFromItem(SweatBeef, QPointF(0,0))); // Incline towards the Beef
+                    speed -= speed*0.15; // Reduce speed from 9% each frame
+                    FoodStock+=l_iUnitToEat;
+                    isThereBeef = true;
+
+                    if(FoodStock > FoodCapacity)
+                    {
+                        m_bOnMyWayHome = true;
+                        m_Timer.start();
+                    }
+                }
+            }
+        }
+        else if(item == m_pAnthillOwner)
+        {
+            // FILL ANTHILL STOCK
+            m_pAnthillOwner->bringMeFood(FoodStock);
+            FoodStock = 0 ;
+            m_bOnMyWayHome = false;
+            m_bOnMyWayAway = false; // to be sure
         }
 
     }
@@ -208,8 +237,76 @@ void Warrior::advance(int step)
                 setRotation(rotation() + 30);
 
     }
-    else if (speed > -3 && !isThereEnemies) // Reset speed if needed
+    else if (speed > -3 && !isThereEnemies && !isThereBeef ) // Reset speed if needed
         speed = -3;
+
+    // GO HOME DUDE
+    if(m_bOnMyWayHome && l_dClosestDistToObstacle == 999)
+    {
+        // If not trying to escape
+        if(!m_bOnMyWayAway)
+        {
+            // Checck if it takes too much time
+            if(m_Timer.elapsed() > 30000)
+            {
+                m_bOnMyWayAway = true;
+                m_Timer.restart();
+            }
+
+
+            //moveAngleTowards(mapFromItem(m_pAnthillOwner, QPointF(0,0)));
+            QPointF AnthillCenter = mapFromItem(m_pAnthillOwner, QPointF(0,0));
+            /*QLineF lineToCenter(QPointF(0, 0), AnthillCenter));
+
+            // Compute angle to the other point
+            qreal angleToCenter = std::atan2(lineToCenter.dy(), lineToCenter.dx());
+            angleToCenter = normalizeAngle((Pi - angleToCenter) + Pi / 2);*/
+
+            int l_iAngleStep = 10; // Magic value
+
+            qreal Quad = std::atan2((AnthillCenter.y() > 0 ) ? 1 : -1, (AnthillCenter.x() > 0) ? 1 : -1);
+            qreal angleToAnthill = std::atan2(AnthillCenter.y(), AnthillCenter.x());
+            //angleToAnthill = normalizeAngle((Pi - angleToAnthill) + Pi / 2);
+
+            if(angleToAnthill > (-5*Pi/9) && angleToAnthill < (-4*Pi/9)) // 80 / 100 deg
+            {
+                // nope
+            }
+            else if  ( (Quad > - Pi && Quad < -Pi/2) || (Quad > Pi/2 && Quad < Pi)) // Quad 3 or 2
+            {
+                // Rotate right
+                setRotation(rotation() - l_iAngleStep);
+            }
+            else //if ( (Quad < 0    && Quad > - Pi / 2) || ( Quad > 0  && Quad < Pi /2) ) // Quad  4or 1
+            {
+                // Rotate left
+                setRotation(rotation() + l_iAngleStep);
+            }
+
+            /*// Rotate towards the point
+            if (angleToCenter < Pi && angleToCenter > Pi / 4)
+            {
+                // Rotate left
+                setRotation(rotation() + ((angle < -Pi / 2) ? l_iAngleStep : -l_iAngleStep));
+            }
+            else if (angleToCenter >= Pi && angleToCenter < (Pi + Pi / 2 + Pi / 4))
+            {
+                // Rotate right
+                setRotation(rotation() + ((angle < Pi / 2) ? l_iAngleStep : -l_iAngleStep));
+            }*/
+        }
+        // Move away for 5s, then retry
+        else
+        {
+            if(m_Timer.elapsed() > 10000)
+            {
+                m_bOnMyWayAway = false;
+                m_Timer.restart();
+            }
+        }
+
+
+    }
 
 
     //setRotation(rotation() + dx);

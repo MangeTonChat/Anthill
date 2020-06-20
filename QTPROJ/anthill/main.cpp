@@ -14,13 +14,15 @@
 #include "obstacle.h"
 
 
-static constexpr int    AnthillCount            = 2;
+static constexpr int    AnthillCount            = 1;
 static constexpr int    AnthillRay              = 100;
-static constexpr int    AntCount                = 10;
+static constexpr int    AntCount                = 20;
 static constexpr int    BorderLength            = 1000 ; // Scene size , it's a square
 static constexpr double PercentageOfBeef        = 10 ; //  %
-static constexpr double PercentageOfObstacle    = 40 ; // %
-static constexpr int    PercentageOfWall        = 100; // percent of continuous walls
+
+// Obstacle
+static constexpr double PercentageOfObstacle    = 70 ; // %
+static constexpr int    PercentageOfWall        = 90; // percent of continuous walls
 static constexpr int    WallMinLength           = 3;
 static constexpr int    WallMaxLength           = 20;
 
@@ -74,7 +76,7 @@ int main(int argc, char **argv)
             scene.addItem(queen);
 
             // Create worker
-            for (int i = 0; i < AntCount; ++i)
+            for (int i = 0; i < AntCount; ++i) // antCount
             {
                 // Generate ant in the anthill
                 double angleRandom = QRandomGenerator::global()->bounded(0,628) / 100.0;

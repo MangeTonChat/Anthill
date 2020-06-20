@@ -12,6 +12,8 @@ public:
 
     bool consumeFoodStock(int p_Unit);
 
+    void bringMeFood(int p_Unit);
+
     QColor const getColor() const {return colorAnthill;}
 
     QRectF boundingRect() const override;
@@ -27,7 +29,7 @@ protected:
     int InitialAntNumber;
     int AntNumber;
     int MaxAntNumber;
-    const int MaxFoodStock = 30000;
+    const int MaxFoodStock = 10000;
     int AnthillFoodStock = MaxFoodStock;
 
 };
