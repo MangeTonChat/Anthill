@@ -2,6 +2,7 @@
 #define ANT_H
 
 #include <QGraphicsItem>
+#include <QGraphicsScene>
 
 #include "anthill.h"
 
@@ -9,6 +10,7 @@
 class Ant: public QGraphicsItem
 {
 public:
+    bool m_bIsAQueen=false; //TODO : a setter
     Ant(Anthill* p_pAnthill);
     virtual ~Ant();
 
@@ -35,7 +37,6 @@ protected:
     // Member Values
     const int MaxHealthPoint = 1000;
     int m_iHealthPoints = MaxHealthPoint;
-    bool m_bIsAQueen;
     Anthill* m_pAnthillOwner;
     qreal ScaleFactor;
     qreal angle = 0;

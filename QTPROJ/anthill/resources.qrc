@@ -7,5 +7,6 @@
         <file>images/cobblestone.png</file>
         <file>images/beef.png</file>
         <file>images/stone_bricks.png</file>
+        <file>images/egg.png</file>
     </qresource>
 </RCC>

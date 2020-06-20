@@ -19,6 +19,9 @@ public:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
     void advance(int phase) override;
     qreal getRay() const {return m_rRay;}
+    bool canLayEgg();
+    void EggLayed();
+    int getMaxFoodStock() const { return MaxFoodStock;}
 
 protected:
     const qreal m_rRay;

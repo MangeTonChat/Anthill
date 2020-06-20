@@ -4,6 +4,7 @@
 #include <QDebug>
 
 #include "ant.h"
+#include "egg.h"
 #include "queen.h"
 #include "warrior.h"
 #include "map.h"
@@ -13,12 +14,12 @@
 #include "Beef.h"
 
 
-static constexpr int AnthillCount = 10;
+static constexpr int AnthillCount = 6;
 static constexpr int AnthillRay = 150;
-static constexpr int AntCount = 15;
-static constexpr double PercentageOfBeef = 0.00 ;
+static constexpr int AntCount = 1;
+static constexpr double PercentageOfBeef = 0 ;
 static constexpr int BorderLength = 1000 ;
-static constexpr double PercentageOfObstacle = 0.07 ;
+static constexpr double PercentageOfObstacle = 0 ;
 static constexpr int PercentageOfWall = 50;
 
 
@@ -118,7 +119,7 @@ int main(int argc, char **argv)
 
     //Generate some random obstacles
     QPixmap Obstacle = QPixmap(":/images/cobblestone.png");
-    SpaceToGenerate = BorderLength - WidthCobble - Obstacle.width()/2;
+    SpaceToGenerate = BorderLength - Obstacle.width()/2;
     for(double i=PercentageOfObstacle*BorderLength; i>0; i--)
     {
 
@@ -172,7 +173,7 @@ int main(int argc, char **argv)
 
     //Generate some random bouffe
     QPixmap BeefPixmap = QPixmap(":/images/beef.png");
-    SpaceToGenerate = BorderLength - WidthCobble - BeefPixmap.width()/2;
+    SpaceToGenerate = BorderLength - BeefPixmap.width()/2;
     for(double i=PercentageOfBeef*BorderLength; i>0; i--){
         Beef* randomBeef=new Beef(BeefPixmap);
         randomBeef->setScale(0.5);

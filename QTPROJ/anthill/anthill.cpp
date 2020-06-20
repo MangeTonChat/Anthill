@@ -52,3 +52,28 @@ bool Anthill::consumeFoodStock(int p_Unit)
     return false;
 
 }
+
+bool Anthill::canLayEgg()
+{
+    if (AnthillFoodStock > 0.8 * MaxFoodStock)
+    {
+        return true;
+    }
+
+    return false;
+
+}
+
+void Anthill::EggLayed()
+{
+    AnthillFoodStock -= 10;
+}
+
+/*
+void Anthill::createEgg(QPointF position)
+{
+    Ant *Egg = new Egg(anthill);
+    Egg->setPos(position));
+    scene.addItem(Egg);
+}
+*/

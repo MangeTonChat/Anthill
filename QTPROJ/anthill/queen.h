@@ -1,6 +1,10 @@
 #ifndef QUEEN_H
 #define QUEEN_H
 #include "movingant.h"
+#include "egg.h"
+#include "anthill.h"
+#include <QElapsedTimer>
+#include <QRandomGenerator>
 
 
 class Queen:public MovingAnt
@@ -11,10 +15,11 @@ public:
     void LayEgg();
     void SignalAnthillUnderAttack();
     void SignalAnthillSafe();
-    void LayNewQueenEgg();
     void GoForNewAnthill();
 protected:
     int ResourceConsumptionToLayEggs;
+    QElapsedTimer timer;
+    virtual void advance(int phase) override;
 };
 
 #endif // QUEEN_H

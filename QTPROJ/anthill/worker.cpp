@@ -1,6 +1,5 @@
 #include "worker.h"
 
-#include <QRandomGenerator>
 
 Worker::Worker(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
 {
@@ -11,4 +10,39 @@ Worker::Worker(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
 
     colorAntType = QColor(Qt::green);
 
+    timer.start();
+
+}
+
+void Worker::advance(int step){
+
+    if (!step)
+        return;
+
+    MovingAnt::advance(step);
+
+    if(timer.elapsed()>TimeWorkerWaitsToEvolve){
+        if(m_bIsAQueen==true){
+            EvolveToQueen();
+            Die();
+        }
+        else {
+            EvolveToWarrior();
+            Die();
+        }
+    }
+}
+
+void Worker::EvolveToQueen(){
+    Ant *queen = new Queen(m_pAnthillOwner);
+    queen->m_bIsAQueen=true; //To know this one is supposed to gtfo one day
+    queen->setPos(mapToScene(QPointF(0,0)));
+    scene()->addItem(queen);
+}
+
+void Worker::EvolveToWarrior(){
+    Ant *warrior = new Warrior(m_pAnthillOwner);
+    warrior->m_bIsAQueen=true; //To know this one is supposed to gtfo one day
+    warrior->setPos(mapToScene(QPointF(0,0)));
+    scene()->addItem(warrior);
 }
