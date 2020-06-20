@@ -119,7 +119,6 @@ void MovingAnt::advance(int step)
     if(!eatToSurvive())
         return;
 
-
     // Line beetween ant and anthill center
     QLineF lineToCenter(QPointF(0, 0), mapFromItem(m_pAnthillOwner,QPointF(0.0,0.0)));
 
@@ -146,43 +145,6 @@ void MovingAnt::advance(int step)
     else if (::sin(angle) > 0) {
         angle -= 0.25;
     }
-
-
-    /*// Try not to crash with any other ant
-    const QList<QGraphicsItem *> dangerMice = scene()->items(QPolygonF()
-                           << mapToScene(0, 0)
-                           << mapToScene(-30, -50)
-                           << mapToScene(30, -50));
-
-    for (const QGraphicsItem *item : dangerMice) {
-        if (item == this)
-            continue;
-
-        QLineF lineToMouse(QPointF(0, 0), mapFromItem(item, 0, 0));
-        qreal angleToMouse = std::atan2(lineToMouse.dy(), lineToMouse.dx());
-        angleToMouse = normalizeAngle((Pi - angleToMouse) + Pi / 2);
-
-        if (angleToMouse >= 0 && angleToMouse < Pi / 2) {
-            // Rotate right
-            angle += 0.5;
-        } else if (angleToMouse <= TwoPi && angleToMouse > (TwoPi - Pi / 2)) {
-            // Rotate left
-            angle -= 0.5;
-
-        }
-
-    }
-
-    // Add some random movement
-    if (dangerMice.size() > 1 && QRandomGenerator::global()->bounded(10) == 0) {
-        if (QRandomGenerator::global()->bounded(1))
-            angle += QRandomGenerator::global()->bounded(1 / 500.0);
-        else
-            angle -= QRandomGenerator::global()->bounded(1 / 500.0);
-    }*/
-
-    /*speed += (-50 + QRandomGenerator::global()->bounded(100)) / 100.0;
-    speed = - speed;*/
 
     qreal dx = sin(angle) * 10;
 

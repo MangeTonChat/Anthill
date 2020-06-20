@@ -2,6 +2,8 @@
 #define WARRIOR_H
 #include "movingant.h"
 #include "Beef.h"
+#include "obstacle.h"
+#include <QElapsedTimer>
 
 
 class Warrior:public MovingAnt
@@ -21,14 +23,18 @@ protected:
     // Methods
     virtual void advance(int phase) override;
 
-    bool isCloseToBorder() const;
+    virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
 
     void moveAngleTowards(const QPointF& PointInItemCoordinate);
 
     // Member values
+    bool m_bOnMyWayHome;
+    bool m_bOnMyWayAway;
     int FoodStock;
-    int FoodCapacity;
-    int HPTreshold;
+    const int FoodCapacity = 1000;
+    int HPThreshold;
+    QElapsedTimer m_Timer;
+
 };
 
 #endif // WARRIOR_H

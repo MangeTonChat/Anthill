@@ -1,6 +1,7 @@
 #include "anthill.h"
 
 #include <QPainter>
+#include <QtDebug>
 
 Anthill::Anthill() : m_rRay(200)
 {
@@ -77,3 +78,17 @@ void Anthill::createEgg(QPointF position)
     scene.addItem(Egg);
 }
 */
+
+void Anthill::bringMeFood(int p_Unit)
+{
+    qDebug() << "debut  : " <<  AnthillFoodStock;
+    if(AnthillFoodStock + p_Unit < MaxFoodStock )
+    {
+        AnthillFoodStock += p_Unit;
+    }
+    else
+        AnthillFoodStock = MaxFoodStock;
+
+    qDebug() << "fin  : " <<  AnthillFoodStock;
+}
+

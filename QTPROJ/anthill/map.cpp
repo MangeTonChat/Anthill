@@ -10,11 +10,11 @@ void Map::Generate(){
     //Two horizontal limits
     for(int x=-Scene->width()/2; x<Scene->width()/2-WidthCobble; x+=WidthCobble)
     {
-        QGraphicsPixmapItem* border=new QGraphicsPixmapItem(Cobble);
+        Obstacle* border=new Obstacle(Cobble);
         border->setScale(0.5);
         border->setPos(x,-Scene->height()/2);
         Scene->addItem(border);
-        QGraphicsPixmapItem* border2=new QGraphicsPixmapItem(Cobble);
+        Obstacle* border2=new Obstacle(Cobble);
         border2->setScale(0.5);
         border2->setPos(x,Scene->height()/2-WidthCobble);
         Scene->addItem(border2);
@@ -23,11 +23,11 @@ void Map::Generate(){
     //Two vertical limits
     for(int y=-Scene->width()/2; y<Scene->height()/2-WidthCobble; y+=WidthCobble)
     {
-        QGraphicsPixmapItem* border=new QGraphicsPixmapItem(Cobble);
+        Obstacle* border=new Obstacle(Cobble);
         border->setScale(0.5);
         border->setPos(-Scene->width()/2,y);
         Scene->addItem(border);
-        QGraphicsPixmapItem* border2=new QGraphicsPixmapItem(Cobble);
+        Obstacle* border2=new Obstacle(Cobble);
         border2->setScale(0.5);
         border2->setPos(Scene->width()/2-WidthCobble,y);
         Scene->addItem(border2);
@@ -35,7 +35,7 @@ void Map::Generate(){
 
 
     //Last cobble to complete the map
-    QGraphicsPixmapItem* border=new QGraphicsPixmapItem(Cobble);
+    Obstacle* border=new Obstacle(Cobble);
     border->setScale(0.5);
     border->setPos(Scene->width()/2-WidthCobble,Scene->height()/2-WidthCobble);
     Scene->addItem(border);

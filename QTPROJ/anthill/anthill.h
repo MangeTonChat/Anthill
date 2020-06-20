@@ -12,6 +12,8 @@ public:
 
     bool consumeFoodStock(int p_Unit);
 
+    void bringMeFood(int p_Unit);
+
     QColor const getColor() const {return colorAnthill;}
 
     QRectF boundingRect() const override;

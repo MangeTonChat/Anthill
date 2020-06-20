@@ -40,7 +40,8 @@ protected:
     Anthill* m_pAnthillOwner;
     qreal ScaleFactor;
     qreal angle = 0;
-    qreal speed = -3;
+    const qreal MaxSpeed = -3;
+    qreal speed = MaxSpeed;
     QColor colorAnthill;
     QColor colorAntType;
 };
