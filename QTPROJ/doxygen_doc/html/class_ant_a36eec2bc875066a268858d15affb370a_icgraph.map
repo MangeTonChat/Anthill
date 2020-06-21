@@ -1,0 +1,6 @@
+<map id="Ant::eatToSurvive" name="Ant::eatToSurvive">
+<area shape="rect" id="node1" title=" " alt="" coords="357,31,480,57"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html#ae073c6edacfe9dec592ac699daaf4119" title="advance" alt="" coords="172,31,309,57"/>
+<area shape="rect" id="node3" href="$class_queen.html#a573ce390ce044dead1e9eab4d22914ba" title="advance" alt="" coords="7,5,122,32"/>
+<area shape="rect" id="node4" href="$class_worker.html#a175373c091701726708cb5c0ca953fbb" title="advance" alt="" coords="5,56,124,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="Warrior" name="Warrior">
+<area shape="rect" id="node1" title=" " alt="" coords="5,777,160,1060"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="13,549,152,729"/>
+<area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="17,131,148,501"/>
+<area shape="rect" id="node4" title=" " alt="" coords="28,5,137,83"/>
+</map>

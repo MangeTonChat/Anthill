@@ -1,0 +1,8 @@
+<map id="anthill/queen.h" name="anthill/queen.h">
+<area shape="rect" id="node1" title=" " alt="" coords="278,5,385,32"/>
+<area shape="rect" id="node2" href="$worker_8h.html" title=" " alt="" coords="159,80,269,107"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="288,155,401,181"/>
+<area shape="rect" id="node6" href="$queen_8cpp.html" title=" " alt="" coords="369,80,489,107"/>
+<area shape="rect" id="node3" href="$larva_8cpp.html" title=" " alt="" coords="5,155,116,181"/>
+<area shape="rect" id="node5" href="$worker_8cpp.html" title=" " alt="" coords="141,155,263,181"/>
+</map>

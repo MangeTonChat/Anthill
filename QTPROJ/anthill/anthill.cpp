@@ -70,25 +70,14 @@ void Anthill::EggLayed()
     AnthillFoodStock -= 10;
 }
 
-/*
-void Anthill::createEgg(QPointF position)
-{
-    Ant *Egg = new Egg(anthill);
-    Egg->setPos(position));
-    scene.addItem(Egg);
-}
-*/
 
 void Anthill::bringMeFood(int p_Unit)
 {
-    qDebug() << "debut  : " <<  AnthillFoodStock;
     if(AnthillFoodStock + p_Unit < MaxFoodStock )
     {
         AnthillFoodStock += p_Unit;
     }
     else
         AnthillFoodStock = MaxFoodStock;
-
-    qDebug() << "fin  : " <<  AnthillFoodStock;
 }
 

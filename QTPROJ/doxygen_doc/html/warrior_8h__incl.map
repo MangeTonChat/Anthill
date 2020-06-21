@@ -1,0 +1,13 @@
+<map id="anthill/warrior.h" name="anthill/warrior.h">
+<area shape="rect" id="node1" title=" " alt="" coords="197,5,306,32"/>
+<area shape="rect" id="node2" href="$movingant_8h.html" title=" " alt="" coords="41,80,132,107"/>
+<area shape="rect" id="node7" href="$_beef_8h.html" title=" " alt="" coords="270,80,329,107"/>
+<area shape="rect" id="node10" href="$obstacle_8h.html" title=" " alt="" coords="164,80,246,107"/>
+<area shape="rect" id="node11" title=" " alt="" coords="354,80,464,107"/>
+<area shape="rect" id="node3" href="$ant_8h.html" title=" " alt="" coords="57,155,108,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="37,304,146,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="22,229,143,256"/>
+<area shape="rect" id="node6" href="$anthill_8h.html" title=" " alt="" coords="168,229,234,256"/>
+<area shape="rect" id="node8" title=" " alt="" coords="132,155,286,181"/>
+<area shape="rect" id="node9" title=" " alt="" coords="310,155,380,181"/>
+</map>

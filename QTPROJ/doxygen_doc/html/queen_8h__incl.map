@@ -1,0 +1,12 @@
+<map id="anthill/queen.h" name="anthill/queen.h">
+<area shape="rect" id="node1" title=" " alt="" coords="251,5,357,32"/>
+<area shape="rect" id="node2" href="$movingant_8h.html" title=" " alt="" coords="5,155,96,181"/>
+<area shape="rect" id="node6" href="$anthill_8h.html" title=" " alt="" coords="295,304,361,331"/>
+<area shape="rect" id="node7" href="$egg_8h.html" title=" " alt="" coords="211,80,266,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="227,155,338,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="414,80,551,107"/>
+<area shape="rect" id="node3" href="$ant_8h.html" title=" " alt="" coords="136,229,187,256"/>
+<area shape="rect" id="node4" title=" " alt="" coords="164,379,273,405"/>
+<area shape="rect" id="node5" title=" " alt="" coords="149,304,270,331"/>
+<area shape="rect" id="node8" href="$staticant_8h.html" title=" " alt="" coords="120,155,203,181"/>
+</map>

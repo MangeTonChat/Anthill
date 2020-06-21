@@ -2,9 +2,12 @@
 #define BEEF_H
 
 #include <QGraphicsPixmapItem>
+#include <QObject>
 
-class Beef : public QGraphicsPixmapItem
+class Beef : public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
+
 public:
     Beef(QPixmap pixmap) : QGraphicsPixmapItem(pixmap){}
     ~Beef() {}

@@ -110,6 +110,7 @@ void MovingAnt::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidg
 
 }
 
+
 void MovingAnt::advance(int step)
 {
     if (!step)
@@ -145,6 +146,47 @@ void MovingAnt::advance(int step)
     else if (::sin(angle) > 0) {
         angle -= 0.25;
     }
+
+   // const QList<QGraphicsItem *> aroundItems= scene()->collidingItems(this);
+    QPainterPath circleDetection;
+    circleDetection.addEllipse(mapToScene(QPointF(0, -38*ScaleFactor)), 46 , 46);
+    const QList<QGraphicsItem *> aroundItems = scene()->items(circleDetection);
+
+    bool isThereEnemies = false; // To reset Speed
+    bool l_bCanAttack = true;
+
+    // Search for others items
+    for (QGraphicsItem *item : aroundItems)
+    {
+        // To attack only one ant per frame
+        if ( l_bCanAttack )
+        {
+            // Warrior Check
+            MovingAnt* Enemy = dynamic_cast<MovingAnt*>(item);
+
+            // If cast is sucessfull
+            if(Enemy)
+            {
+                // If its not an ant from Home Anthill
+                if (Enemy->getAnthill() != m_pAnthillOwner)
+                {
+                    // FIGHT
+                    //moveAngleTowards(mapFromItem(Enemy, QPointF(0,0))); // Incline towards the enemy
+                    //QLineF lineToCenter(QPointF(0, 0), mapFromItem(Enemy, QPointF(0,0))); // Idea to decrease speed as enemy come closer
+                    speed -= speed*0.09; // Reduce speed from 9% each frame
+                    Attack(Enemy); // ATTACK DA ENEMY , 1 - 10 damage
+                    isThereEnemies= true; // sweatflag
+                }
+                l_bCanAttack = false;
+                continue;
+            }
+        }
+    }
+
+    if (speed > -3 && !isThereEnemies) // Reset speed if needed
+            speed = -3;
+
+
 
     qreal dx = sin(angle) * 10;
 

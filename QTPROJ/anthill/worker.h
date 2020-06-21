@@ -17,8 +17,10 @@ public:
 
     void EvolveToQueen();
 
+    void Attack(MovingAnt* Enemy) override;
+
 protected:
-    static constexpr int TimeWorkerWaitsToEvolve = 20000;
+    static constexpr int TimeWorkerWaitsToEvolve = 12000;
     QElapsedTimer timer;
     virtual void advance(int phase) override;
 };

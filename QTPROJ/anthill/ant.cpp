@@ -13,7 +13,7 @@ Ant::~Ant()
 bool Ant::eatToSurvive()
 {
     // If the ant can't eat, reduce its life
-    if(!m_pAnthillOwner->consumeFoodStock(1)) // a 1 stp
+    if(!m_pAnthillOwner->consumeFoodStock(1))
     {
         m_iHealthPoints--;
 
@@ -23,6 +23,8 @@ bool Ant::eatToSurvive()
             return false;
         }
     }
+    else if (m_iHealthPoints < MaxHealthPoint)
+        m_iHealthPoints++;
 
     return true;
 

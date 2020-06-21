@@ -18,7 +18,7 @@ public:
 
     bool eatToSurvive();
 
-
+    inline void takeDamage(const int damage) {m_iHealthPoints -= damage; if (m_iHealthPoints <=0) Die();}
 
     const Anthill* getAnthill() const {return m_pAnthillOwner;}
 
@@ -29,9 +29,20 @@ public:
 
 protected:
     // Methods
+
+    /*!
+     * \brief advance
+     * \param phase
+     */
     virtual void advance(int phase) override = 0; // QGraphicsItem
 
+    /*!
+     * \brief setColors, SET THE FABULOUS COLORS
+     * \param p_ColorAnthill
+     * \param p_ColorAntType
+     */
     virtual void setColors(const QColor& p_ColorAnthill, const QColor& p_ColorAntType) {colorAnthill = p_ColorAnthill; colorAntType = p_ColorAntType;}
+
     virtual void setScaleFactor(const qreal& p_ScaleFactor) {ScaleFactor = p_ScaleFactor;}
 
     // Member Values

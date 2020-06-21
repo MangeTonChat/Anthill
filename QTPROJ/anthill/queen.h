@@ -16,6 +16,7 @@ public:
     void SignalAnthillUnderAttack();
     void SignalAnthillSafe();
     void GoForNewAnthill();
+    void Attack(MovingAnt* Enemy) override;
 protected:
     int ResourceConsumptionToLayEggs;
     QElapsedTimer timer;

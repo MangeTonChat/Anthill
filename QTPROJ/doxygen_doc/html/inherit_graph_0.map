@@ -1,0 +1,12 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,144,115,171"/>
+<area shape="rect" id="node2" href="$class_ant.html" title=" " alt="" coords="171,119,213,145"/>
+<area shape="rect" id="node10" href="$class_anthill.html" title=" " alt="" coords="163,169,221,196"/>
+<area shape="rect" id="node3" href="$class_moving_ant.html" title=" " alt="" coords="269,81,352,108"/>
+<area shape="rect" id="node7" href="$class_static_ant.html" title=" " alt="" coords="273,157,349,184"/>
+<area shape="rect" id="node4" href="$class_queen.html" title=" " alt="" coords="402,5,462,32"/>
+<area shape="rect" id="node5" href="$class_warrior.html" title=" " alt="" coords="400,56,464,83"/>
+<area shape="rect" id="node6" href="$class_worker.html" title=" " alt="" coords="400,107,464,133"/>
+<area shape="rect" id="node8" href="$class_egg.html" title=" " alt="" coords="409,157,455,184"/>
+<area shape="rect" id="node9" href="$class_larva.html" title=" " alt="" coords="406,208,458,235"/>
+</map>

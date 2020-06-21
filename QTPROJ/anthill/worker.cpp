@@ -14,6 +14,11 @@ Worker::Worker(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
 
 }
 
+void Worker::Attack(MovingAnt* Enemy)
+{
+    Enemy->takeDamage(QRandomGenerator::global()->bounded(5));
+}
+
 void Worker::advance(int step){
 
     if (!step)

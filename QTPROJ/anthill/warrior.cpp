@@ -28,15 +28,9 @@ Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill), m_bOnMyWayHome(fa
 
  }
 
-void Warrior::Attack(Warrior* Enemy, int damage)
+void Warrior::Attack(MovingAnt* Enemy)
 {
-    Enemy->m_iHealthPoints-=damage;
-
-    if(Enemy->m_iHealthPoints <0)
-    {
-        Enemy->Die();
-    }
-
+    Enemy->takeDamage(QRandomGenerator::global()->bounded(5,10));
 }
 
 void Warrior::paint(QPainter *painter, const QStyleOptionGraphicsItem *_1, QWidget *_2)
@@ -92,12 +86,11 @@ void Warrior::advance(int step)
 
     bool isThereEnemies = false; // To reset Speed
     bool isThereBeef = false;
+    bool l_bCanAttack = true;
+
     double l_dClosestDistToObstacle = 999;
     double l_dSpeedFactor = 999;
     int l_iRightOrLeft = 1 ; // 1 right , -1 left
-
-    bool l_bCanAttack = true;
-    //bool flagStopForGoHome = false;
 
     // Search for others items
     for (QGraphicsItem *item : aroundItems)
@@ -166,7 +159,7 @@ void Warrior::advance(int step)
             if ( l_bCanAttack )
             {
                 // Warrior Check
-                Warrior* Enemy = dynamic_cast<Warrior*>(item);
+                MovingAnt* Enemy = dynamic_cast<MovingAnt*>(item);
 
                 // If cast is sucessfull
                 if(Enemy)
@@ -178,7 +171,7 @@ void Warrior::advance(int step)
                         moveAngleTowards(mapFromItem(Enemy, QPointF(0,0))); // Incline towards the enemy
                         //QLineF lineToCenter(QPointF(0, 0), mapFromItem(Enemy, QPointF(0,0))); // Idea to decrease speed as enemy come closer
                         speed -= speed*0.09; // Reduce speed from 9% each frame
-                        Attack(Enemy,QRandomGenerator::global()->bounded(10)); // ATTACK DA ENEMY , 1 - 10 damage
+                        Attack(Enemy); // ATTACK DA ENEMY , 1 - 10 damage
                         isThereEnemies= true; // sweatflag
                     }
                     l_bCanAttack = false;
@@ -253,49 +246,29 @@ void Warrior::advance(int step)
                 m_Timer.restart();
             }
 
-
-            //moveAngleTowards(mapFromItem(m_pAnthillOwner, QPointF(0,0)));
             QPointF AnthillCenter = mapFromItem(m_pAnthillOwner, QPointF(0,0));
-            /*QLineF lineToCenter(QPointF(0, 0), AnthillCenter));
-
-            // Compute angle to the other point
-            qreal angleToCenter = std::atan2(lineToCenter.dy(), lineToCenter.dx());
-            angleToCenter = normalizeAngle((Pi - angleToCenter) + Pi / 2);*/
 
             int l_iAngleStep = 10; // Magic value
 
             qreal Quad = std::atan2((AnthillCenter.y() > 0 ) ? 1 : -1, (AnthillCenter.x() > 0) ? 1 : -1);
             qreal angleToAnthill = std::atan2(AnthillCenter.y(), AnthillCenter.x());
-            //angleToAnthill = normalizeAngle((Pi - angleToAnthill) + Pi / 2);
 
             if(angleToAnthill > (-5*Pi/9) && angleToAnthill < (-4*Pi/9)) // 80 / 100 deg
             {
-                // nope
+                // don't change angle, it's in the right direction
             }
             else if  ( (Quad > - Pi && Quad < -Pi/2) || (Quad > Pi/2 && Quad < Pi)) // Quad 3 or 2
             {
                 // Rotate right
                 setRotation(rotation() - l_iAngleStep);
             }
-            else //if ( (Quad < 0    && Quad > - Pi / 2) || ( Quad > 0  && Quad < Pi /2) ) // Quad  4or 1
+            else //if ( (Quad < 0    && Quad > - Pi / 2) || ( Quad > 0  && Quad < Pi /2) ) // Quad 4 or 1
             {
                 // Rotate left
                 setRotation(rotation() + l_iAngleStep);
             }
-
-            /*// Rotate towards the point
-            if (angleToCenter < Pi && angleToCenter > Pi / 4)
-            {
-                // Rotate left
-                setRotation(rotation() + ((angle < -Pi / 2) ? l_iAngleStep : -l_iAngleStep));
-            }
-            else if (angleToCenter >= Pi && angleToCenter < (Pi + Pi / 2 + Pi / 4))
-            {
-                // Rotate right
-                setRotation(rotation() + ((angle < Pi / 2) ? l_iAngleStep : -l_iAngleStep));
-            }*/
         }
-        // Move away for 5s, then retry
+        // Move away for 10s, then retry
         else
         {
             if(m_Timer.elapsed() > 10000)
@@ -304,11 +277,7 @@ void Warrior::advance(int step)
                 m_Timer.restart();
             }
         }
-
-
     }
 
-
-    //setRotation(rotation() + dx);
     setPos(mapToParent(0, speed)); // Make it move !
 }

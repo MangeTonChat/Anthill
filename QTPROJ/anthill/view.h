@@ -15,7 +15,7 @@ public:
   {
 
     // Set Background
-    setRenderHint(QPainter::Antialiasing);
+    //setRenderHint(QPainter::Antialiasing);
     setBackgroundBrush(QPixmap(":/images/dirt.png"));
 
     // Set QGraphicsView Mode
