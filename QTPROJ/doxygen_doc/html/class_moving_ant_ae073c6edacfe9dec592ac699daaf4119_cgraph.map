@@ -1,6 +1,6 @@
 <map id="MovingAnt::advance" name="MovingAnt::advance">
-<area shape="rect" id="node1" title="advance" alt="" coords="5,56,143,83"/>
-<area shape="rect" id="node2" href="$class_ant.html#a36eec2bc875066a268858d15affb370a" title=" " alt="" coords="191,31,313,57"/>
+<area shape="rect" id="node1" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="5,56,143,83"/>
+<area shape="rect" id="node2" href="$class_ant.html#a36eec2bc875066a268858d15affb370a" title="eatToSurvive , Make the ant eat the food stock of its anthill" alt="" coords="191,31,313,57"/>
 <area shape="rect" id="node5" href="$class_anthill.html#a056c72e54b1c7360b3fb3e254faf38f4" title=" " alt="" coords="199,81,305,108"/>
 <area shape="rect" id="node3" href="$class_anthill.html#a1466d4834893fdfad549aa28e66a9d7b" title=" " alt="" coords="361,5,544,32"/>
 <area shape="rect" id="node4" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="413,56,492,83"/>

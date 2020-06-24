@@ -1,6 +1,6 @@
 <map id="StaticAnt" name="StaticAnt">
-<area shape="rect" id="node1" title=" " alt="" coords="9,971,131,1121"/>
-<area shape="rect" id="node2" href="$class_ant.html" title=" " alt="" coords="5,565,135,921"/>
+<area shape="rect" id="node1" title=" " alt="" coords="9,1000,131,1151"/>
+<area shape="rect" id="node2" href="$class_ant.html" title=" " alt="" coords="5,565,135,951"/>
 <area shape="rect" id="node3" title=" " alt="" coords="31,5,141,83"/>
 <area shape="rect" id="node4" href="$class_anthill.html" title=" " alt="" coords="87,132,245,503"/>
 </map>

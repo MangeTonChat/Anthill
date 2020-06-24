@@ -1,11 +1,12 @@
 <map id="Worker::advance" name="Worker::advance">
-<area shape="rect" id="node1" title="advance" alt="" coords="5,132,124,159"/>
-<area shape="rect" id="node2" href="$class_moving_ant.html#ae073c6edacfe9dec592ac699daaf4119" title="advance" alt="" coords="185,56,323,83"/>
-<area shape="rect" id="node7" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title=" " alt="" coords="411,107,480,133"/>
+<area shape="rect" id="node1" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="5,132,124,159"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html#ae073c6edacfe9dec592ac699daaf4119" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="185,56,323,83"/>
+<area shape="rect" id="node7" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title="A Cool way to call the desctuctor." alt="" coords="411,107,480,133"/>
 <area shape="rect" id="node8" href="$class_worker.html#ae87ee7e8d73f38c2898f27b1d9cdd705" title=" " alt="" coords="174,157,334,184"/>
-<area shape="rect" id="node9" href="$class_worker.html#a4cb7ed0b79765211e3be88c51eec4cb2" title=" " alt="" coords="172,208,336,235"/>
-<area shape="rect" id="node3" href="$class_ant.html#a36eec2bc875066a268858d15affb370a" title=" " alt="" coords="384,5,507,32"/>
+<area shape="rect" id="node10" href="$class_worker.html#a4cb7ed0b79765211e3be88c51eec4cb2" title=" " alt="" coords="172,208,336,235"/>
+<area shape="rect" id="node3" href="$class_ant.html#a36eec2bc875066a268858d15affb370a" title="eatToSurvive , Make the ant eat the food stock of its anthill" alt="" coords="384,5,507,32"/>
 <area shape="rect" id="node6" href="$class_anthill.html#a056c72e54b1c7360b3fb3e254faf38f4" title=" " alt="" coords="392,56,499,83"/>
 <area shape="rect" id="node4" href="$class_anthill.html#a1466d4834893fdfad549aa28e66a9d7b" title=" " alt="" coords="555,5,737,32"/>
 <area shape="rect" id="node5" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="607,81,685,108"/>
+<area shape="rect" id="node9" href="$class_ant.html#a868189d4f9b3f9eb91b59db8700fe1f1" title=" " alt="" coords="387,183,503,209"/>
 </map>

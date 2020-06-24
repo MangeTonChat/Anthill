@@ -25,7 +25,7 @@ public:
     }
 
 protected:
-    int m_iBeefQuantity = 1000;
+    int m_iBeefQuantity = 1500;
 };
 
 #endif // BEEF_H

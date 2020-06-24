@@ -14,14 +14,14 @@
 #include "Beef.h"
 #include "obstacle.h"
 
-static constexpr int    AnthillCount            = 5;
+static constexpr int    AnthillCount            = 3;
 static constexpr int    AnthillRay              = 100;
 static constexpr int    AntCount                = 0;
-static constexpr int    BorderLength            = 2000 ; // Scene size , it's a square
-static constexpr double PercentageOfBeef        = 10 ; //  %
+static constexpr int    BorderLength            = 3000 ; // Scene size , it's a square
+static constexpr double PercentageOfBeef        = 5 ; //  %
 
 // Obstacle
-static constexpr double PercentageOfObstacle    = 30 ; // %
+static constexpr double PercentageOfObstacle    = 50 ; // %
 static constexpr int    PercentageOfWall        = 90; // percent of continuous walls
 static constexpr int    WallMinLength           = 3;
 static constexpr int    WallMaxLength           = 5;

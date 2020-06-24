@@ -1,9 +1,9 @@
 <map id="Ant::Die" name="Ant::Die">
-<area shape="rect" id="node1" title=" " alt="" coords="501,81,571,108"/>
-<area shape="rect" id="node2" href="$class_egg.html#af3b481b6603888de387fa7d3abb120f4" title="advance" alt="" coords="342,5,442,32"/>
-<area shape="rect" id="node3" href="$class_larva.html#ab2d1c12c8e6669444c75be41c0ab718b" title="advance" alt="" coords="339,56,445,83"/>
-<area shape="rect" id="node4" href="$class_worker.html#a175373c091701726708cb5c0ca953fbb" title="advance" alt="" coords="333,107,451,133"/>
-<area shape="rect" id="node5" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title=" " alt="" coords="331,157,453,184"/>
+<area shape="rect" id="node1" title="A Cool way to call the desctuctor." alt="" coords="501,81,571,108"/>
+<area shape="rect" id="node2" href="$class_egg.html#af3b481b6603888de387fa7d3abb120f4" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="342,5,442,32"/>
+<area shape="rect" id="node3" href="$class_larva.html#ab2d1c12c8e6669444c75be41c0ab718b" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="339,56,445,83"/>
+<area shape="rect" id="node4" href="$class_worker.html#a175373c091701726708cb5c0ca953fbb" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="333,107,451,133"/>
+<area shape="rect" id="node5" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title="takeDamage , Reduce the ant healthpoint by damage" alt="" coords="331,157,453,184"/>
 <area shape="rect" id="node6" href="$class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a" title=" " alt="" coords="172,107,283,133"/>
 <area shape="rect" id="node8" href="$class_queen.html#a7a07ca05d052bbd21be65fc82578ed35" title=" " alt="" coords="174,157,281,184"/>
 <area shape="rect" id="node9" href="$class_worker.html#a7f823b869d4b9cb9ed0deffb70f4e3a9" title=" " alt="" coords="172,208,283,235"/>

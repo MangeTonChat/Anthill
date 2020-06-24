@@ -7,7 +7,8 @@ var searchData=
   ['getanthill_43',['getAnthill',['../class_ant.html#af13b6b8a4dd4fdfdd3abfe5887d57885',1,'Ant']]],
   ['getcolor_44',['getColor',['../class_anthill.html#a040d5f3013b5ee19510b65d7fa2ce4f7',1,'Anthill']]],
   ['geteated_45',['getEated',['../class_beef.html#a59cf5df0ae81436dbfd3138493714f30',1,'Beef']]],
-  ['getmaxfoodstock_46',['getMaxFoodStock',['../class_anthill.html#a0f33a38e26d66ce56328f27d66bdd1df',1,'Anthill']]],
-  ['getray_47',['getRay',['../class_anthill.html#a056c72e54b1c7360b3fb3e254faf38f4',1,'Anthill']]],
-  ['gofornewanthill_48',['GoForNewAnthill',['../class_queen.html#aa3f60e48a53712e59351ea788fa72629',1,'Queen']]]
+  ['getisqueen_46',['getIsQueen',['../class_ant.html#a20ba1c5a3a3a8efc080e9a3f5d45dd42',1,'Ant']]],
+  ['getmaxfoodstock_47',['getMaxFoodStock',['../class_anthill.html#a0f33a38e26d66ce56328f27d66bdd1df',1,'Anthill']]],
+  ['getray_48',['getRay',['../class_anthill.html#a056c72e54b1c7360b3fb3e254faf38f4',1,'Anthill']]],
+  ['gofornewanthill_49',['GoForNewAnthill',['../class_queen.html#aa3f60e48a53712e59351ea788fa72629',1,'Queen']]]
 ];

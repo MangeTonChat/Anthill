@@ -21,6 +21,11 @@ public:
 
 protected:
     // Methods
+
+    /*!
+     * \brief advance
+     * \param phase
+     */
     virtual void advance(int phase) override;
 
 
