@@ -1,5 +1,5 @@
 <map id="Egg::advance" name="Egg::advance">
-<area shape="rect" id="node1" title="Call Twice per frame (one with phase = 0 and then phase = 1)" alt="" coords="5,31,105,57"/>
+<area shape="rect" id="node1" title="advance , Manage Evolution" alt="" coords="5,31,105,57"/>
 <area shape="rect" id="node2" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title="A Cool way to call the desctuctor." alt="" coords="177,5,246,32"/>
 <area shape="rect" id="node4" href="$class_ant.html#a868189d4f9b3f9eb91b59db8700fe1f1" title=" " alt="" coords="153,56,269,83"/>
 <area shape="rect" id="node3" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="317,5,396,32"/>

@@ -1,8 +1,8 @@
 <map id="MovingAnt" name="MovingAnt">
-<area shape="rect" id="node1" title=" " alt="" coords="267,579,405,759"/>
-<area shape="rect" id="node4" href="$class_queen.html" title=" " alt="" coords="5,851,235,1045"/>
-<area shape="rect" id="node5" href="$class_warrior.html" title=" " alt="" coords="259,807,413,1089"/>
-<area shape="rect" id="node6" href="$class_worker.html" title=" " alt="" coords="437,865,624,1031"/>
-<area shape="rect" id="node2" href="$class_ant.html" title=" " alt="" coords="271,131,401,531"/>
-<area shape="rect" id="node3" title=" " alt="" coords="281,5,391,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="134,579,255,744"/>
+<area shape="rect" id="node4" href="$class_queen.html" title=" " alt="" coords="5,829,93,965"/>
+<area shape="rect" id="node5" href="$class_warrior.html" title=" " alt="" coords="117,792,272,1001"/>
+<area shape="rect" id="node6" href="$class_worker.html" title=" " alt="" coords="296,814,483,979"/>
+<area shape="rect" id="node2" href="$class_ant.html" title=" " alt="" coords="129,131,260,531"/>
+<area shape="rect" id="node3" title=" " alt="" coords="140,5,249,83"/>
 </map>

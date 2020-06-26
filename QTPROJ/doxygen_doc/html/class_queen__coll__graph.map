@@ -1,7 +1,7 @@
 <map id="Queen" name="Queen">
-<area shape="rect" id="node1" title=" " alt="" coords="5,1229,235,1424"/>
-<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="51,1000,189,1180"/>
-<area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="55,565,185,951"/>
-<area shape="rect" id="node4" title=" " alt="" coords="81,5,191,83"/>
-<area shape="rect" id="node5" href="$class_anthill.html" title=" " alt="" coords="137,132,295,503"/>
+<area shape="rect" id="node1" title=" " alt="" coords="26,1156,114,1292"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="9,941,131,1107"/>
+<area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="5,507,135,892"/>
+<area shape="rect" id="node4" title=" " alt="" coords="31,5,141,83"/>
+<area shape="rect" id="node5" href="$class_anthill.html" title=" " alt="" coords="87,132,245,444"/>
 </map>

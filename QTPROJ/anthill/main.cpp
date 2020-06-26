@@ -17,7 +17,7 @@
 static constexpr int    AnthillCount            = 3;
 static constexpr int    AnthillRay              = 100;
 static constexpr int    AntCount                = 0;
-static constexpr int    BorderLength            = 3000 ; // Scene size , it's a square
+static constexpr int    BorderLength            = 1500 ; // Scene size , it's a square
 static constexpr double PercentageOfBeef        = 5 ; //  %
 
 // Obstacle

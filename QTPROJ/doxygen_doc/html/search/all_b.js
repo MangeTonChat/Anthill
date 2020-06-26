@@ -1,25 +1,5 @@
 var searchData=
 [
-  ['m_5fbisaqueen_58',['m_bIsAQueen',['../class_ant.html#a78ed12f5dac7847af275ade1aa4eee9c',1,'Ant']]],
-  ['m_5fbonmywayaway_59',['m_bOnMyWayAway',['../class_warrior.html#aaa4d66f1cf87aa8e7f928b7d3a9e7d7a',1,'Warrior']]],
-  ['m_5fbonmywayhome_60',['m_bOnMyWayHome',['../class_warrior.html#a72e403d1d330fab8b3703e7bcc94cc8d',1,'Warrior']]],
-  ['m_5fibeefquantity_61',['m_iBeefQuantity',['../class_beef.html#afda11972b36feaf919213595f1a10300',1,'Beef']]],
-  ['m_5fibordersize_62',['m_iBorderSize',['../class_map.html#a92e0d908bd52e6c467538a38979217a6',1,'Map']]],
-  ['m_5fihealthpoints_63',['m_iHealthPoints',['../class_ant.html#adf826e96e0c8c238df7e9477ca7d30a1',1,'Ant']]],
-  ['m_5fpanthillowner_64',['m_pAnthillOwner',['../class_ant.html#a57df50d6d7e0c0f9b0739aaf4ba45c92',1,'Ant']]],
-  ['m_5frray_65',['m_rRay',['../class_anthill.html#a9641774138c085bba6d8c5e17ccac17f',1,'Anthill']]],
-  ['m_5ftimer_66',['m_Timer',['../class_warrior.html#af39ac53372997a560c653c7080990ed2',1,'Warrior']]],
-  ['main_67',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['main_2ecpp_68',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['map_69',['Map',['../class_map.html',1,'Map'],['../class_map.html#a75e0831e1ff64525da145c59f9228014',1,'Map::Map()']]],
-  ['map_2ecpp_70',['map.cpp',['../map_8cpp.html',1,'']]],
-  ['map_2eh_71',['map.h',['../map_8h.html',1,'']]],
-  ['maxantnumber_72',['MaxAntNumber',['../class_anthill.html#a9783abeeece1708f618831b689067c93',1,'Anthill']]],
-  ['maxfoodstock_73',['MaxFoodStock',['../class_anthill.html#a54d8f41ef5317e420638d500248d61a7',1,'Anthill']]],
-  ['maxhealthpoint_74',['MaxHealthPoint',['../class_ant.html#a8d96cf68e5289542a7cde07383d60b3e',1,'Ant']]],
-  ['maxspeed_75',['MaxSpeed',['../class_ant.html#a0c7b08083f833005d8de237a35a1b75b',1,'Ant']]],
-  ['moveangletowards_76',['moveAngleTowards',['../class_warrior.html#a5983dab4f440fa360db5db497ce7ef6a',1,'Warrior']]],
-  ['movingant_77',['MovingAnt',['../class_moving_ant.html',1,'MovingAnt'],['../class_moving_ant.html#a71929090242df2ef6c1978af2c70ab18',1,'MovingAnt::MovingAnt()']]],
-  ['movingant_2ecpp_78',['movingant.cpp',['../movingant_8cpp.html',1,'']]],
-  ['movingant_2eh_79',['movingant.h',['../movingant_8h.html',1,'']]]
+  ['obstacle_69',['Obstacle',['../class_obstacle.html',1,'Obstacle'],['../class_obstacle.html#ae69ba763ed6ff57f94aefaa200960cf2',1,'Obstacle::Obstacle()']]],
+  ['obstacle_2eh_70',['obstacle.h',['../obstacle_8h.html',1,'']]]
 ];

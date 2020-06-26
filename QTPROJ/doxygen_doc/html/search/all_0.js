@@ -9,6 +9,5 @@ var searchData=
   ['anthill_2ecpp_6',['anthill.cpp',['../anthill_8cpp.html',1,'']]],
   ['anthill_2eh_7',['anthill.h',['../anthill_8h.html',1,'']]],
   ['anthillfoodstock_8',['AnthillFoodStock',['../class_anthill.html#a71fee6d2889848fdaf0354cb7cfffced',1,'Anthill']]],
-  ['antnumber_9',['AntNumber',['../class_anthill.html#ad475be8dfa79d8d65ebd242bdeafd589',1,'Anthill']]],
-  ['attack_10',['Attack',['../class_moving_ant.html#a71aa6741aa36821b28c6d9eb43bfd584',1,'MovingAnt::Attack()'],['../class_queen.html#a7a07ca05d052bbd21be65fc82578ed35',1,'Queen::Attack()'],['../class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a',1,'Warrior::Attack()'],['../class_worker.html#a7f823b869d4b9cb9ed0deffb70f4e3a9',1,'Worker::Attack()']]]
+  ['attack_9',['Attack',['../class_moving_ant.html#a71aa6741aa36821b28c6d9eb43bfd584',1,'MovingAnt::Attack()'],['../class_queen.html#a7a07ca05d052bbd21be65fc82578ed35',1,'Queen::Attack()'],['../class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a',1,'Warrior::Attack()'],['../class_worker.html#a7f823b869d4b9cb9ed0deffb70f4e3a9',1,'Worker::Attack()']]]
 ];

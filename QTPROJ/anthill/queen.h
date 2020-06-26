@@ -12,15 +12,32 @@ class Queen:public MovingAnt
 public:
     Queen(Anthill* p_pAnthill);
     virtual ~Queen() {};
+
+    /*!
+     * \brief LayEgg inside the anthill
+     */
     void LayEgg();
-    void SignalAnthillUnderAttack();
-    void SignalAnthillSafe();
-    void GoForNewAnthill();
+
+    /*!
+     * \brief Attack another MovingAnt , damage beetween 20 and 25
+     * \param Enemy
+     */
     void Attack(MovingAnt* Enemy) override;
+
+    /*void SignalAnthillUnderAttack();
+    void SignalAnthillSafe();
+    void GoForNewAnthill();*/
+
 protected:
-    int ResourceConsumptionToLayEggs;
-    QElapsedTimer timer;
+
+    /*!
+     * \brief advance, manage egg laying
+     * \param phase
+     */
     virtual void advance(int phase) override;
+
+    QElapsedTimer timer;
+
 };
 
 #endif // QUEEN_H

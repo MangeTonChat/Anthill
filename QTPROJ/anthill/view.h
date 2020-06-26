@@ -10,12 +10,17 @@
 class View : public QGraphicsView
 {
 public:
+
+    /*!
+   * \brief View Constructor, set the needed parameters
+   * \param parent , set the view parents
+   */
   explicit View(QWidget *parent = 0) :
     QGraphicsView(parent)
   {
 
     // Set Background
-    //setRenderHint(QPainter::Antialiasing);
+    //setRenderHint(QPainter::Antialiasing); // Desactivated to improve performance
     setBackgroundBrush(QPixmap(":/images/dirt.png"));
 
     // Set QGraphicsView Mode
@@ -23,10 +28,14 @@ public:
     setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
     setDragMode(QGraphicsView::ScrollHandDrag);
 
-
   }
 
 protected :
+
+    /*!
+   * \brief wheelEvent , Use Ctrl + Wheel to zoom on the scene on the mouse location
+   * \param event , the Wheel Event only will activated this function
+   */
   void wheelEvent(QWheelEvent *event)
   {
       // Ctrl + Wheel
@@ -51,6 +60,10 @@ protected :
 
   }
 
+  /*!
+   * \brief keyPressEvent , Right / Left rotate the scene, just for fun
+   * \param event, Right and Left Arrow
+   */
   void keyPressEvent(QKeyEvent *event)
   {
     if(event->key() == Qt::Key_Left)

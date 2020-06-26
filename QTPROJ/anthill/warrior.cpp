@@ -227,7 +227,7 @@ void Warrior::advance(int step)
 
             // Other magic trick to escape from crazy angles
             if(speed ==0 )
-                setRotation(rotation() + 30);
+                setRotation(rotation() + QRandomGenerator::global()->bounded(10,30));
 
     }
     else if (speed > -3 && !isThereEnemies && !isThereBeef ) // Reset speed if needed

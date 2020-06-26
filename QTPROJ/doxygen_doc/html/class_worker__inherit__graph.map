@@ -1,6 +1,6 @@
 <map id="Worker" name="Worker">
-<area shape="rect" id="node1" title=" " alt="" coords="5,807,192,972"/>
-<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="29,579,168,759"/>
+<area shape="rect" id="node1" title=" " alt="" coords="5,792,192,957"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="38,579,159,744"/>
 <area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="33,131,164,531"/>
 <area shape="rect" id="node4" title=" " alt="" coords="44,5,153,83"/>
 </map>

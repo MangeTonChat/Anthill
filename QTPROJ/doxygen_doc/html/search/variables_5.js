@@ -1,5 +1,15 @@
 var searchData=
 [
-  ['idanthill_259',['IdAnthill',['../class_anthill.html#aa057cc92ff63dff126c8d840e23feee5',1,'Anthill::IdAnthill()'],['../class_pheromone.html#a3870bea4c3c759a1f520d21591988730',1,'Pheromone::IdAnthill()']]],
-  ['initialantnumber_260',['InitialAntNumber',['../class_anthill.html#a924cb45db01b95536c5e518491e455ea',1,'Anthill']]]
+  ['m_5fbisaqueen_234',['m_bIsAQueen',['../class_ant.html#a78ed12f5dac7847af275ade1aa4eee9c',1,'Ant']]],
+  ['m_5fbonmywayaway_235',['m_bOnMyWayAway',['../class_warrior.html#aaa4d66f1cf87aa8e7f928b7d3a9e7d7a',1,'Warrior']]],
+  ['m_5fbonmywayhome_236',['m_bOnMyWayHome',['../class_warrior.html#a72e403d1d330fab8b3703e7bcc94cc8d',1,'Warrior']]],
+  ['m_5fibeefquantity_237',['m_iBeefQuantity',['../class_beef.html#afda11972b36feaf919213595f1a10300',1,'Beef']]],
+  ['m_5fibordersize_238',['m_iBorderSize',['../class_map.html#a92e0d908bd52e6c467538a38979217a6',1,'Map']]],
+  ['m_5fihealthpoints_239',['m_iHealthPoints',['../class_ant.html#adf826e96e0c8c238df7e9477ca7d30a1',1,'Ant']]],
+  ['m_5fpanthillowner_240',['m_pAnthillOwner',['../class_ant.html#a57df50d6d7e0c0f9b0739aaf4ba45c92',1,'Ant']]],
+  ['m_5frray_241',['m_rRay',['../class_anthill.html#a9641774138c085bba6d8c5e17ccac17f',1,'Anthill']]],
+  ['m_5ftimer_242',['m_Timer',['../class_warrior.html#af39ac53372997a560c653c7080990ed2',1,'Warrior']]],
+  ['maxfoodstock_243',['MaxFoodStock',['../class_anthill.html#a54d8f41ef5317e420638d500248d61a7',1,'Anthill']]],
+  ['maxhealthpoint_244',['MaxHealthPoint',['../class_ant.html#a8d96cf68e5289542a7cde07383d60b3e',1,'Ant']]],
+  ['maxspeed_245',['MaxSpeed',['../class_ant.html#a0c7b08083f833005d8de237a35a1b75b',1,'Ant']]]
 ];

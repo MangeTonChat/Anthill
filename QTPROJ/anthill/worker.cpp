@@ -16,7 +16,7 @@ Worker::Worker(Anthill* p_pAnthill) : MovingAnt(p_pAnthill)
 
 void Worker::Attack(MovingAnt* Enemy)
 {
-    Enemy->takeDamage(QRandomGenerator::global()->bounded(5));
+    Enemy->takeDamage(QRandomGenerator::global()->bounded(1,5));
 }
 
 void Worker::advance(int step){
@@ -38,14 +38,16 @@ void Worker::advance(int step){
     }
 }
 
-void Worker::EvolveToQueen(){
+void Worker::EvolveToQueen()
+{
     Ant *queen = new Queen(m_pAnthillOwner);
     queen->setIsQueen(true); //To know this one is supposed to gtfo one day
     queen->setPos(mapToScene(QPointF(0,0)));
     scene()->addItem(queen);
 }
 
-void Worker::EvolveToWarrior(){
+void Worker::EvolveToWarrior()
+{
     Ant *warrior = new Warrior(m_pAnthillOwner);
     warrior->setIsQueen(true); //To know this one is supposed to gtfo one day
     warrior->setPos(mapToScene(QPointF(0,0)));

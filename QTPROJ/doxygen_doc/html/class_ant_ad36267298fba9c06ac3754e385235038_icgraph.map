@@ -1,7 +1,7 @@
 <map id="Ant::takeDamage" name="Ant::takeDamage">
 <area shape="rect" id="node1" title="takeDamage , Reduce the ant healthpoint by damage" alt="" coords="331,56,453,83"/>
-<area shape="rect" id="node2" href="$class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a" title=" " alt="" coords="172,5,283,32"/>
-<area shape="rect" id="node4" href="$class_queen.html#a7a07ca05d052bbd21be65fc82578ed35" title=" " alt="" coords="174,56,281,83"/>
-<area shape="rect" id="node5" href="$class_worker.html#a7f823b869d4b9cb9ed0deffb70f4e3a9" title=" " alt="" coords="172,107,283,133"/>
-<area shape="rect" id="node3" href="$class_warrior.html#af7dbd09c49d0a5959e66f43c4269ad6a" title="advance" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node2" href="$class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a" title="Attack another MovingAnt , damage beetween 5 and 10." alt="" coords="172,5,283,32"/>
+<area shape="rect" id="node4" href="$class_queen.html#a7a07ca05d052bbd21be65fc82578ed35" title="Attack another MovingAnt , damage beetween 20 and 25." alt="" coords="174,56,281,83"/>
+<area shape="rect" id="node5" href="$class_worker.html#a7f823b869d4b9cb9ed0deffb70f4e3a9" title="Attack another MovingAnt , damage beetween 1 and 5." alt="" coords="172,107,283,133"/>
+<area shape="rect" id="node3" href="$class_warrior.html#af7dbd09c49d0a5959e66f43c4269ad6a" title="advance, Manage Obstacle , Fight , Food and Go Home trough ant moves" alt="" coords="5,5,124,32"/>
 </map>
