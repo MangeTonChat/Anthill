@@ -1,12 +1,12 @@
 <map id="Warrior::advance" name="Warrior::advance">
-<area shape="rect" id="node1" title="advance" alt="" coords="5,107,124,133"/>
-<area shape="rect" id="node2" href="$class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a" title=" " alt="" coords="208,5,319,32"/>
-<area shape="rect" id="node6" href="$class_anthill.html#a176c69d93e278227347dc2ee61a1364d" title=" " alt="" coords="193,56,334,83"/>
-<area shape="rect" id="node7" href="$class_ant.html#af13b6b8a4dd4fdfdd3abfe5887d57885" title=" " alt="" coords="211,107,315,133"/>
-<area shape="rect" id="node8" href="$class_beef.html#a59cf5df0ae81436dbfd3138493714f30" title=" " alt="" coords="209,157,317,184"/>
-<area shape="rect" id="node10" href="$class_warrior.html#a5983dab4f440fa360db5db497ce7ef6a" title="moveAngleTowards" alt="" coords="172,208,355,235"/>
-<area shape="rect" id="node3" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title=" " alt="" coords="403,5,525,32"/>
-<area shape="rect" id="node4" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title=" " alt="" coords="573,5,643,32"/>
+<area shape="rect" id="node1" title="advance, Manage Obstacle , Fight , Food and Go Home trough ant moves" alt="" coords="5,107,124,133"/>
+<area shape="rect" id="node2" href="$class_warrior.html#a8a13cf952d3acd077f8ed0fb9d58f37a" title="Attack another MovingAnt , damage beetween 5 and 10." alt="" coords="208,5,319,32"/>
+<area shape="rect" id="node6" href="$class_anthill.html#a176c69d93e278227347dc2ee61a1364d" title="bringMeFood , fill The foodstock by p_Unit" alt="" coords="193,56,334,83"/>
+<area shape="rect" id="node7" href="$class_ant.html#af13b6b8a4dd4fdfdd3abfe5887d57885" title="getAnthill" alt="" coords="211,107,315,133"/>
+<area shape="rect" id="node8" href="$class_beef.html#a59cf5df0ae81436dbfd3138493714f30" title="getEated , Reduce the beef quantity by p_iUnit" alt="" coords="209,157,317,184"/>
+<area shape="rect" id="node10" href="$class_warrior.html#a5983dab4f440fa360db5db497ce7ef6a" title="moveAngleTowards , Rotate to face the given point coordinate" alt="" coords="172,208,355,235"/>
+<area shape="rect" id="node3" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title="takeDamage , Reduce the ant healthpoint by damage" alt="" coords="403,5,525,32"/>
+<area shape="rect" id="node4" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title="A Cool way to call the desctuctor." alt="" coords="573,5,643,32"/>
 <area shape="rect" id="node5" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="691,5,769,32"/>
 <area shape="rect" id="node9" href="$class_beef.html#a40560cbf89132c31bbcf92e24d64fe14" title=" " alt="" coords="419,157,509,184"/>
 </map>

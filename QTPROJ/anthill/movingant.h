@@ -9,19 +9,28 @@ public:
     MovingAnt(Anthill* p_pAnthill);
     virtual ~MovingAnt();
 
-    void Eat();
-
+    /*!
+     * \brief Attack , Pure Virtual
+     * \param Enemy
+     */
     virtual void Attack(MovingAnt* Enemy) = 0;
+
+    // QGraphics Item Inherited Funtions
 
     virtual QRectF boundingRect() const override;
     virtual QPainterPath shape() const override;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
+
 protected:
+
     // Methods
+
+    /*!
+     * \brief advance , manage Attack and staying inside the anthill
+     * \param phase
+     */
     virtual void advance(int phase) override;
 
-
-    int FoodConsumption;
 };
 
 #endif // MOVINGANT_H

@@ -1,14 +1,9 @@
 var searchData=
 [
-  ['scalefactor_94',['ScaleFactor',['../class_ant.html#aeda1ae5436620d4bd659c3f42c340d82',1,'Ant']]],
-  ['scene_95',['Scene',['../class_map.html#a7d0bddd98d907e5077fb1b691c3a5255',1,'Map']]],
-  ['setcolors_96',['setColors',['../class_ant.html#a530d49994a6ac783604c17aba09264ed',1,'Ant']]],
-  ['setscalefactor_97',['setScaleFactor',['../class_ant.html#a55738f8ed83e497abf2c6126f4dd3509',1,'Ant']]],
-  ['shape_98',['shape',['../class_ant.html#ac6f9cce4a2bc97c90633ec81d1ef176f',1,'Ant::shape()'],['../class_anthill.html#ad89d0f65ac365b2c49d133e9b7ae0cc5',1,'Anthill::shape()'],['../class_moving_ant.html#afbb3872ba7a837fd59531676479bbdf2',1,'MovingAnt::shape()'],['../class_static_ant.html#a70b907fff00ef9c97b049974e8bfa236',1,'StaticAnt::shape()']]],
-  ['signalanthillsafe_99',['SignalAnthillSafe',['../class_queen.html#aec639bafc72813ac6064f9569e409285',1,'Queen']]],
-  ['signalanthillunderattack_100',['SignalAnthillUnderAttack',['../class_queen.html#ab83743f662b2d455abd56126968b2daa',1,'Queen']]],
-  ['speed_101',['speed',['../class_ant.html#a56aa49f5f4285e8fb44a7ee7f98d067d',1,'Ant']]],
-  ['staticant_102',['StaticAnt',['../class_static_ant.html',1,'StaticAnt'],['../class_static_ant.html#a0da0b92626d19e0fb838d9b04d63a48b',1,'StaticAnt::StaticAnt()']]],
-  ['staticant_2ecpp_103',['staticant.cpp',['../staticant_8cpp.html',1,'']]],
-  ['staticant_2eh_104',['staticant.h',['../staticant_8h.html',1,'']]]
+  ['takedamage_92',['takeDamage',['../class_ant.html#ad36267298fba9c06ac3754e385235038',1,'Ant']]],
+  ['timeeggwaitstoevolve_93',['TimeEggWaitsToEvolve',['../class_egg.html#af17ecd817b9a6f4187b7aab4d5bd2249',1,'Egg']]],
+  ['timelarvawaitstoevolve_94',['TimeLarvaWaitsToEvolve',['../class_larva.html#aab8172559b39ca04748e53cedf38186c',1,'Larva']]],
+  ['timer_95',['timer',['../class_egg.html#ab818c96e7e54b12ea87dea37808ba4a6',1,'Egg::timer()'],['../class_larva.html#a3b6a8a743a249066824a54aaf48bf8e4',1,'Larva::timer()'],['../class_queen.html#a4b19a64028a6a41c1ba858b7504c21b0',1,'Queen::timer()'],['../class_worker.html#a25ac97c43bb805d7b7902676339e0119',1,'Worker::timer()']]],
+  ['timeworkerwaitstoevolve_96',['TimeWorkerWaitsToEvolve',['../class_worker.html#a85da9d3bcb876ba328ecb42060768e1d',1,'Worker']]],
+  ['twopi_97',['TwoPi',['../movingant_8cpp.html#ad4abd03d5b9a772cf7decd7780cf0655',1,'TwoPi():&#160;movingant.cpp'],['../warrior_8cpp.html#ad4abd03d5b9a772cf7decd7780cf0655',1,'TwoPi():&#160;warrior.cpp']]]
 ];

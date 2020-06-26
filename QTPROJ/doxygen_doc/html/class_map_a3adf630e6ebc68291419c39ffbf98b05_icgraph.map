@@ -1,5 +1,5 @@
 <map id="Map::RegenerateFood" name="Map::RegenerateFood">
-<area shape="rect" id="node1" title=" " alt="" coords="347,5,497,32"/>
-<area shape="rect" id="node2" href="$class_map.html#a53984501d4dd4ef0678bf47e84aaaf5b" title=" " alt="" coords="161,5,299,32"/>
-<area shape="rect" id="node3" href="$class_map.html#a0d9924e895e757523c40cc2a61418f7b" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node1" title="RegenerateFood each time a food object is destroyed." alt="" coords="347,5,497,32"/>
+<area shape="rect" id="node2" href="$class_map.html#a53984501d4dd4ef0678bf47e84aaaf5b" title="GenerateFood." alt="" coords="161,5,299,32"/>
+<area shape="rect" id="node3" href="$class_map.html#a0d9924e895e757523c40cc2a61418f7b" title="Generate The map environment on the Scene." alt="" coords="5,5,113,32"/>
 </map>

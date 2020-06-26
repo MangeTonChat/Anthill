@@ -52,7 +52,7 @@ void Queen::LayEgg()
             Ant *egg = new Egg(m_pAnthillOwner);
             if(QRandomGenerator::global()->bounded(0,100)<=OddsOfLayingQueen)
             {
-                egg->m_bIsAQueen=true;
+                egg->setIsQueen(true);
             }
             egg->setPos(mapToScene(QPointF(0,0)));
             scene()->addItem(egg);

@@ -6,7 +6,12 @@
 class Obstacle : public QGraphicsPixmapItem
 {
     public:
+    /*!
+     * \brief Obstacle
+     * \param pixmap, picture to display
+     */
     Obstacle(QPixmap pixmap) : QGraphicsPixmapItem(pixmap){}
+
     virtual ~Obstacle(){}
 };
 

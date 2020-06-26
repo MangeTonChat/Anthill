@@ -75,38 +75,40 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QGraphicsPixmapItem&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_beef.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_beef.html">Beef</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QGraphicsPixmapItem</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_beef.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_beef.html">Beef</a> : <span class="keyword">public</span> QObject, <span class="keyword">public</span> QGraphicsPixmapItem <span class="comment">// inheritance from QObject to use signals</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">   12</a></span>&#160;    <a class="code" href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">Beef</a>(QPixmap pixmap) : QGraphicsPixmapItem(pixmap){}</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">   13</a></span>&#160;    <a class="code" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">~Beef</a>() {}</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">   15</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">getEated</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; p_iUnit)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a> -= p_iUnit;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a>  &gt; 0)</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            this-&gt;<a class="code" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">~Beef</a>();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        }</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_beef.html#afda11972b36feaf919213595f1a10300">   28</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a> = 1000;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#endif // BEEF_H</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">   16</a></span>&#160;    <a class="code" href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">Beef</a>(QPixmap pixmap) : QGraphicsPixmapItem(pixmap){}</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">   18</a></span>&#160;    <a class="code" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">~Beef</a>() {}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">   25</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">getEated</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; p_iUnit)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a> -= p_iUnit;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a>  &gt; 0)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this-&gt;<a class="code" href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">~Beef</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_beef.html#afda11972b36feaf919213595f1a10300">   39</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_beef.html#afda11972b36feaf919213595f1a10300">m_iBeefQuantity</a> = 1500; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif // BEEF_H</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_beef_html_a59cf5df0ae81436dbfd3138493714f30"><div class="ttname"><a href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">Beef::getEated</a></div><div class="ttdeci">bool getEated(const int &amp;p_iUnit)</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00015">Beef.h:15</a></div></div>
-<div class="ttc" id="aclass_beef_html_a40560cbf89132c31bbcf92e24d64fe14"><div class="ttname"><a href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">Beef::~Beef</a></div><div class="ttdeci">~Beef()</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00013">Beef.h:13</a></div></div>
-<div class="ttc" id="aclass_beef_html_afba7ff349974d3476f92b3b4fbd33b58"><div class="ttname"><a href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">Beef::Beef</a></div><div class="ttdeci">Beef(QPixmap pixmap)</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00012">Beef.h:12</a></div></div>
+<div class="ttc" id="aclass_beef_html_a59cf5df0ae81436dbfd3138493714f30"><div class="ttname"><a href="class_beef.html#a59cf5df0ae81436dbfd3138493714f30">Beef::getEated</a></div><div class="ttdeci">bool getEated(const int &amp;p_iUnit)</div><div class="ttdoc">getEated , Reduce the beef quantity by p_iUnit</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00025">Beef.h:25</a></div></div>
+<div class="ttc" id="aclass_beef_html_a40560cbf89132c31bbcf92e24d64fe14"><div class="ttname"><a href="class_beef.html#a40560cbf89132c31bbcf92e24d64fe14">Beef::~Beef</a></div><div class="ttdeci">~Beef()</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00018">Beef.h:18</a></div></div>
+<div class="ttc" id="aclass_beef_html_afba7ff349974d3476f92b3b4fbd33b58"><div class="ttname"><a href="class_beef.html#afba7ff349974d3476f92b3b4fbd33b58">Beef::Beef</a></div><div class="ttdeci">Beef(QPixmap pixmap)</div><div class="ttdoc">Beef Constructor.</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00016">Beef.h:16</a></div></div>
 <div class="ttc" id="aclass_beef_html"><div class="ttname"><a href="class_beef.html">Beef</a></div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00007">Beef.h:8</a></div></div>
-<div class="ttc" id="aclass_beef_html_afda11972b36feaf919213595f1a10300"><div class="ttname"><a href="class_beef.html#afda11972b36feaf919213595f1a10300">Beef::m_iBeefQuantity</a></div><div class="ttdeci">int m_iBeefQuantity</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00028">Beef.h:28</a></div></div>
+<div class="ttc" id="aclass_beef_html_afda11972b36feaf919213595f1a10300"><div class="ttname"><a href="class_beef.html#afda11972b36feaf919213595f1a10300">Beef::m_iBeefQuantity</a></div><div class="ttdeci">int m_iBeefQuantity</div><div class="ttdoc">Current beef quantity left.</div><div class="ttdef"><b>Definition:</b> <a href="_beef_8h_source.html#l00039">Beef.h:39</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,11 +1,11 @@
 <map id="Ant" name="Ant">
-<area shape="rect" id="node1" title=" " alt="" coords="565,131,696,501"/>
-<area shape="rect" id="node3" href="$class_moving_ant.html" title=" " alt="" coords="364,549,503,729"/>
-<area shape="rect" id="node7" href="$class_static_ant.html" title=" " alt="" coords="671,564,793,715"/>
-<area shape="rect" id="node2" title=" " alt="" coords="576,5,685,83"/>
-<area shape="rect" id="node4" href="$class_queen.html" title=" " alt="" coords="5,821,235,1016"/>
-<area shape="rect" id="node5" href="$class_warrior.html" title=" " alt="" coords="259,777,413,1060"/>
-<area shape="rect" id="node6" href="$class_worker.html" title=" " alt="" coords="437,836,624,1001"/>
-<area shape="rect" id="node8" href="$class_egg.html" title=" " alt="" coords="648,836,816,1001"/>
-<area shape="rect" id="node9" href="$class_larva.html" title=" " alt="" coords="841,836,1015,1001"/>
+<area shape="rect" id="node1" title=" " alt="" coords="424,131,555,531"/>
+<area shape="rect" id="node3" href="$class_moving_ant.html" title=" " alt="" coords="231,579,353,744"/>
+<area shape="rect" id="node7" href="$class_static_ant.html" title=" " alt="" coords="530,586,651,737"/>
+<area shape="rect" id="node2" title=" " alt="" coords="435,5,544,83"/>
+<area shape="rect" id="node4" href="$class_queen.html" title=" " alt="" coords="5,829,93,965"/>
+<area shape="rect" id="node5" href="$class_warrior.html" title=" " alt="" coords="117,792,272,1001"/>
+<area shape="rect" id="node6" href="$class_worker.html" title=" " alt="" coords="296,814,483,979"/>
+<area shape="rect" id="node8" href="$class_egg.html" title=" " alt="" coords="507,814,675,979"/>
+<area shape="rect" id="node9" href="$class_larva.html" title=" " alt="" coords="699,821,874,972"/>
 </map>

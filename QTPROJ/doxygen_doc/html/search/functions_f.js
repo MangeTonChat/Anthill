@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['takedamage_226',['takeDamage',['../class_ant.html#ad36267298fba9c06ac3754e385235038',1,'Ant']]]
+  ['view_208',['View',['../class_view.html#a74d64dd513eae96bc3196131f865a4e8',1,'View']]]
 ];

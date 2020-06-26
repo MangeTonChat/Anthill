@@ -1,7 +1,7 @@
 <map id="Map::Generate" name="Map::Generate">
-<area shape="rect" id="node1" title=" " alt="" coords="5,56,113,83"/>
-<area shape="rect" id="node2" href="$class_map.html#abb9ca9a3f6685f7d45892729a6c85a4b" title=" " alt="" coords="168,5,315,32"/>
-<area shape="rect" id="node3" href="$class_map.html#a53984501d4dd4ef0678bf47e84aaaf5b" title=" " alt="" coords="173,56,310,83"/>
-<area shape="rect" id="node5" href="$class_map.html#a387aaa7abe2f6e63851c26499c7a9799" title=" " alt="" coords="161,107,321,133"/>
-<area shape="rect" id="node4" href="$class_map.html#a3adf630e6ebc68291419c39ffbf98b05" title=" " alt="" coords="369,56,520,83"/>
+<area shape="rect" id="node1" title="Generate The map environment on the Scene." alt="" coords="5,56,113,83"/>
+<area shape="rect" id="node2" href="$class_map.html#abb9ca9a3f6685f7d45892729a6c85a4b" title="GenerateBorder." alt="" coords="168,5,315,32"/>
+<area shape="rect" id="node3" href="$class_map.html#a53984501d4dd4ef0678bf47e84aaaf5b" title="GenerateFood." alt="" coords="173,56,310,83"/>
+<area shape="rect" id="node5" href="$class_map.html#a387aaa7abe2f6e63851c26499c7a9799" title="GenerateObstacle." alt="" coords="161,107,321,133"/>
+<area shape="rect" id="node4" href="$class_map.html#a3adf630e6ebc68291419c39ffbf98b05" title="RegenerateFood each time a food object is destroyed." alt="" coords="369,56,520,83"/>
 </map>

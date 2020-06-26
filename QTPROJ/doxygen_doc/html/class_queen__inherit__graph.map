@@ -1,6 +1,6 @@
 <map id="Queen" name="Queen">
-<area shape="rect" id="node1" title=" " alt="" coords="5,777,235,972"/>
-<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="51,549,189,729"/>
-<area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="55,131,185,501"/>
-<area shape="rect" id="node4" title=" " alt="" coords="65,5,175,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="27,792,115,928"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html" title=" " alt="" coords="10,579,131,744"/>
+<area shape="rect" id="node3" href="$class_ant.html" title=" " alt="" coords="5,131,136,531"/>
+<area shape="rect" id="node4" title=" " alt="" coords="16,5,125,83"/>
 </map>

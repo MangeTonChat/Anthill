@@ -1,4 +1,4 @@
 <map id="Ant::Die" name="Ant::Die">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,75,32"/>
+<area shape="rect" id="node1" title="A Cool way to call the desctuctor." alt="" coords="5,5,75,32"/>
 <area shape="rect" id="node2" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="123,5,201,32"/>
 </map>

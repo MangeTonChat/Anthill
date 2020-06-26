@@ -1,6 +1,6 @@
 <map id="Warrior::Attack" name="Warrior::Attack">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,116,32"/>
-<area shape="rect" id="node2" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title=" " alt="" coords="164,5,287,32"/>
-<area shape="rect" id="node3" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title=" " alt="" coords="335,5,404,32"/>
+<area shape="rect" id="node1" title="Attack another MovingAnt , damage beetween 5 and 10." alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$class_ant.html#ad36267298fba9c06ac3754e385235038" title="takeDamage , Reduce the ant healthpoint by damage" alt="" coords="164,5,287,32"/>
+<area shape="rect" id="node3" href="$class_ant.html#a8c7359e904ee34444c4f6c1a2b432257" title="A Cool way to call the desctuctor." alt="" coords="335,5,404,32"/>
 <area shape="rect" id="node4" href="$class_ant.html#a33ca6bd592236726a18a2159908e4116" title=" " alt="" coords="452,5,531,32"/>
 </map>

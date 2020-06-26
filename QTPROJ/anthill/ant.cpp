@@ -1,6 +1,6 @@
 #include "ant.h"
 
-Ant::Ant(Anthill* p_pAnthill) : m_pAnthillOwner(p_pAnthill)
+Ant::Ant(Anthill* p_pAnthill) :m_pAnthillOwner(p_pAnthill)  , m_bIsAQueen(false)
 {
     colorAnthill = p_pAnthill->getColor();
 }
@@ -28,4 +28,11 @@ bool Ant::eatToSurvive()
 
     return true;
 
+}
+
+void Ant::takeDamage(const int damage)
+{
+    m_iHealthPoints -= damage;
+    if (m_iHealthPoints <=0)
+        Die();
 }

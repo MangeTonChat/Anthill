@@ -1,4 +1,4 @@
 <map id="Warrior::paint" name="Warrior::paint">
-<area shape="rect" id="node1" title="paint Alors ça paint" alt="" coords="5,5,105,32"/>
-<area shape="rect" id="node2" href="$class_moving_ant.html#ac77c8563b84e01b592d5482f9d121146" title=" " alt="" coords="153,5,272,32"/>
+<area shape="rect" id="node1" title="paint , inherited QGraphicsItem function Draw the ant each frame" alt="" coords="5,5,105,32"/>
+<area shape="rect" id="node2" href="$class_moving_ant.html#ac77c8563b84e01b592d5482f9d121146" title="paint , inherited QGraphicsItem function Draw the ant each frame" alt="" coords="153,5,272,32"/>
 </map>

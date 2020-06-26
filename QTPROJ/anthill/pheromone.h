@@ -5,7 +5,11 @@
 class Pheromone
 {
 public:
+    /*!
+     * \brief Pheromone => TO DO
+     */
     Pheromone();
+
     ~Pheromone();
     void Reset();
     void Die();

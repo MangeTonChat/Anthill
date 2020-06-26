@@ -1,4 +1,4 @@
 <map id="Map::GenerateFood" name="Map::GenerateFood">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,143,32"/>
-<area shape="rect" id="node2" href="$class_map.html#a3adf630e6ebc68291419c39ffbf98b05" title=" " alt="" coords="191,5,341,32"/>
+<area shape="rect" id="node1" title="GenerateFood." alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="$class_map.html#a3adf630e6ebc68291419c39ffbf98b05" title="RegenerateFood each time a food object is destroyed." alt="" coords="191,5,341,32"/>
 </map>

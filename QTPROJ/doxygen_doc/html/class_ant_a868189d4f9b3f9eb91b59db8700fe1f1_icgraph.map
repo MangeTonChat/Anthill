@@ -1,0 +1,8 @@
+<map id="Ant::setIsQueen" name="Ant::setIsQueen">
+<area shape="rect" id="node1" title=" " alt="" coords="384,81,500,108"/>
+<area shape="rect" id="node2" href="$class_larva.html#ab2d1c12c8e6669444c75be41c0ab718b" title="advance, Manage Evolution" alt="" coords="201,5,307,32"/>
+<area shape="rect" id="node3" href="$class_egg.html#af3b481b6603888de387fa7d3abb120f4" title="advance , Manage Evolution" alt="" coords="204,56,304,83"/>
+<area shape="rect" id="node4" href="$class_worker.html#ae87ee7e8d73f38c2898f27b1d9cdd705" title="EvolveToQueen." alt="" coords="174,107,334,133"/>
+<area shape="rect" id="node6" href="$class_worker.html#a4cb7ed0b79765211e3be88c51eec4cb2" title="EvolveToWarrior." alt="" coords="172,157,336,184"/>
+<area shape="rect" id="node5" href="$class_worker.html#a175373c091701726708cb5c0ca953fbb" title="advance, Manage Evolution" alt="" coords="5,132,124,159"/>
+</map>

@@ -19,7 +19,7 @@ void Egg::advance(int step){
     if(timer.elapsed()>TimeEggWaitsToEvolve){
         Ant *larva = new Larva(m_pAnthillOwner);
         if(m_bIsAQueen==true){
-            larva->m_bIsAQueen=true;
+            larva->setIsQueen(true);
         }
         larva->setPos(mapToScene(QPointF(0,0)));
         scene()->addItem(larva);

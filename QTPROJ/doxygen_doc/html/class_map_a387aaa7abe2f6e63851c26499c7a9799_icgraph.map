@@ -1,4 +1,4 @@
 <map id="Map::GenerateObstacle" name="Map::GenerateObstacle">
-<area shape="rect" id="node1" title=" " alt="" coords="161,5,321,32"/>
-<area shape="rect" id="node2" href="$class_map.html#a0d9924e895e757523c40cc2a61418f7b" title=" " alt="" coords="5,5,113,32"/>
+<area shape="rect" id="node1" title="GenerateObstacle." alt="" coords="161,5,321,32"/>
+<area shape="rect" id="node2" href="$class_map.html#a0d9924e895e757523c40cc2a61418f7b" title="Generate The map environment on the Scene." alt="" coords="5,5,113,32"/>
 </map>

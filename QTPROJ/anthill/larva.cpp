@@ -22,7 +22,7 @@ void Larva::advance(int step){
     if(timer.elapsed()>TimeLarvaWaitsToEvolve){
         Ant *worker = new Worker(m_pAnthillOwner);
         if(m_bIsAQueen==true){
-            worker->m_bIsAQueen=true;
+            worker->setIsQueen(true);
         }
         worker->setPos(mapToScene(QPointF(0,0)));
         scene()->addItem(worker);
