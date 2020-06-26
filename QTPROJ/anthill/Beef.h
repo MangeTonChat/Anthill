@@ -36,7 +36,7 @@ public:
 
 protected:
 
-    int m_iBeefQuantity = 1500; /*!< Current beef quantity left */
+    int m_iBeefQuantity = 3000; /*!< Current beef quantity left */
 
 };
 

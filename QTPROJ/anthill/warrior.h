@@ -35,6 +35,8 @@ protected:
      */
     virtual void advance(int phase) override;
 
+    bool eatToSurviveWarrior();
+
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr) override;
 
     // Other Methods

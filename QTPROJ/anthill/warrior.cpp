@@ -17,7 +17,7 @@ static qreal normalizeAngle(qreal angle)
     return angle;
 }
 
-Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill), m_bOnMyWayHome(false),m_bOnMyWayAway(false), FoodStock(0)
+Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill), m_bOnMyWayHome(false),m_bOnMyWayAway(false), FoodStock(FoodCapacity)
 {
      // randomly set first rotation and color
      setRotation(QRandomGenerator::global()->bounded(360 * 16));
@@ -25,6 +25,8 @@ Warrior::Warrior(Anthill* p_pAnthill) : MovingAnt(p_pAnthill), m_bOnMyWayHome(fa
      ScaleFactor = 0.3;
 
      colorAntType = QColor(Qt::red);
+
+     m_iHealthPoints = 2*MaxHealthPoint;
 
  }
 
@@ -72,10 +74,37 @@ void Warrior::moveAngleTowards(const QPointF& PointInItemCoordinate)
 }
 
 
+bool Warrior::eatToSurviveWarrior()
+{
+    FoodStock--;
+
+    // If the ant can't eat, reduce its life
+    if(FoodStock < 0)
+    {
+        m_iHealthPoints--;
+
+        if (m_iHealthPoints < 0 ) // die if no more health
+        {
+            this->~Warrior();
+            return false;
+        }
+    }
+    else if (m_iHealthPoints < MaxHealthPoint)
+    {
+        m_iHealthPoints+=3;
+    }
+
+
+    return true;
+}
+
 
 void Warrior::advance(int step)
 {
     if (!step)
+        return;
+
+    if(!eatToSurviveWarrior())
         return;
 
     // Grab item in a circle around the ant

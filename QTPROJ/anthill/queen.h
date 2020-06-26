@@ -3,6 +3,7 @@
 #include "movingant.h"
 #include "egg.h"
 #include "anthill.h"
+#include "obstacle.h"
 #include <QElapsedTimer>
 #include <QRandomGenerator>
 
@@ -10,7 +11,7 @@
 class Queen:public MovingAnt
 {
 public:
-    Queen(Anthill* p_pAnthill);
+    Queen(Anthill* p_pAnthill , bool shouldILeave = false);
     virtual ~Queen() {};
 
     /*!
@@ -37,6 +38,8 @@ protected:
     virtual void advance(int phase) override;
 
     QElapsedTimer timer;
+
+    bool m_bShouldILeave;
 
 };
 

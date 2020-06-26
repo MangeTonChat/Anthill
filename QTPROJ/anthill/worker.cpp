@@ -40,7 +40,7 @@ void Worker::advance(int step){
 
 void Worker::EvolveToQueen()
 {
-    Ant *queen = new Queen(m_pAnthillOwner);
+    Ant *queen = new Queen(m_pAnthillOwner, true);
     queen->setIsQueen(true); //To know this one is supposed to gtfo one day
     queen->setPos(mapToScene(QPointF(0,0)));
     scene()->addItem(queen);
@@ -49,7 +49,6 @@ void Worker::EvolveToQueen()
 void Worker::EvolveToWarrior()
 {
     Ant *warrior = new Warrior(m_pAnthillOwner);
-    warrior->setIsQueen(true); //To know this one is supposed to gtfo one day
     warrior->setPos(mapToScene(QPointF(0,0)));
     scene()->addItem(warrior);
 }
